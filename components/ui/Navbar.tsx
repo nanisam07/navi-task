@@ -1,13 +1,11 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-
-// Transition used for animations
-import type { Transition } from "framer-motion";
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import type { Transition } from 'framer-motion';
 
 const transition: Transition = {
-  type: "spring",
+  type: 'spring',
   mass: 0.5,
   damping: 11.5,
   stiffness: 100,
@@ -15,68 +13,100 @@ const transition: Transition = {
   restSpeed: 0.001,
 };
 
-// Top-level navbar component
 export const NavbarMenu = () => {
   const [hovered, setHovered] = useState<string | null>(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [mounted, setMounted] = useState(false); // Fix hydration
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      document.documentElement.classList.toggle('dark', isDarkMode);
+    }
+  }, [isDarkMode, mounted]);
+
+  if (!mounted) return null; // Avoid SSR/CSR mismatch
+
+  const menuItems = [
+    'HOME',
+    'ABOUT US',
+    'SERVICES',
+    'OUR PEOCESS',
+    'OUR PROJECTS',
+    'CLIENTS',
+    'TEAM',
+    'CONTACT US',
+    'BLOG',
+    'WISHLIST',
+  ];
 
   return (
     <Menu setActive={setHovered}>
-  <div className="flex items-center justify-between w-full max-w-7xl mx-auto px-4">
-    {/* Logo on Left */}
-    <a href="/" className="flex items-center space-x-2">
-      <img src="/images/logo.png" alt="Logo" className="h-10 w-10 object-contain" />
-      <span className="text-xl font-sarif text-black dark:text-white">
-        NANVI
-      </span>
-    </a>
+      <div className="flex items-center justify-between w-full max-w-7xl mx-auto px-4">
+        {/* Logo */}
+        <a href="/" className="flex items-center space-x-2">
+          <img src="/images/logo.png" alt="Logo" className="h-10 w-10 object-contain" />
+          <span className="text-xl font-serif font-bold text-black dark:text-white">
+            NANVI
+          </span>
+        </a>
 
-        <MenuItem item="HOME" active={hovered} setActive={setHovered}>
-          <HoveredLink href="#">Email</HoveredLink>
-          <HoveredLink href="#">LinkedIn</HoveredLink>
-        </MenuItem>
+        {/* Links + Toggle */}
+        <div className="flex items-center space-x-6">
+          {menuItems.map((label) => (
+            <MenuItem key={label} item={label} active={hovered} setActive={setHovered}>
+              <HoveredLink href="#">Company</HoveredLink>
+              <HoveredLink href="#">Team</HoveredLink>
+            </MenuItem>
+          ))}
 
-        <MenuItem item="ABOUT US" active={hovered} setActive={setHovered}>
-          <HoveredLink href="#">Company</HoveredLink>
-          <HoveredLink href="#">Team</HoveredLink>
-        </MenuItem>
-        <MenuItem item="SERVICES" active={hovered} setActive={setHovered}>
-          <HoveredLink href="#">Company</HoveredLink>
-          <HoveredLink href="#">Team</HoveredLink>
-        </MenuItem>
-        <MenuItem item="OUR PEOCESS" active={hovered} setActive={setHovered}>
-          <HoveredLink href="#">Company</HoveredLink>
-          <HoveredLink href="#">Team</HoveredLink>
-        </MenuItem>
-        <MenuItem item="OUR PROJECTS" active={hovered} setActive={setHovered}>
-          <HoveredLink href="#">Company</HoveredLink>
-          <HoveredLink href="#">Team</HoveredLink>
-        </MenuItem>
-        <MenuItem item="CLIENTS" active={hovered} setActive={setHovered}>
-          <HoveredLink href="#">Company</HoveredLink>
-          <HoveredLink href="#">Team</HoveredLink>
-        </MenuItem>
-        <MenuItem item="TEAM" active={hovered} setActive={setHovered}>
-          <HoveredLink href="#">Company</HoveredLink>
-          <HoveredLink href="#">Team</HoveredLink>
-        </MenuItem>
-        <MenuItem item="CONTACT US" active={hovered} setActive={setHovered}>
-          <HoveredLink href="#">Company</HoveredLink>
-          <HoveredLink href="#">Team</HoveredLink>
-        </MenuItem>
-        <MenuItem item="BLOG" active={hovered} setActive={setHovered}>
-          <HoveredLink href="#">Company</HoveredLink>
-          <HoveredLink href="#">Team</HoveredLink>
-        </MenuItem>
-        <MenuItem item="WISHLIST" active={hovered} setActive={setHovered}>
-          <HoveredLink href="#">Company</HoveredLink>
-          <HoveredLink href="#">Team</HoveredLink>
-        </MenuItem>
+          {/* Dark Mode Toggle Button */}
+          <button
+            onClick={() => setIsDarkMode(!isDarkMode)}
+            className="ml-4 w-10 h-10 flex items-center justify-center rounded-full border dark:border-white border-black hover:bg-black/10 dark:hover:bg-white/10 transition"
+            title="Toggle Dark Mode"
+          >
+            {isDarkMode ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 3v1m0 16v1m8.66-11.34l-.7.7m-13.92 0l-.7-.7M21 12h-1M4 12H3m15.66 6.34l-.7-.7m-13.92 0l-.7.7M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 text-black"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 3c1.657 0 3.156.672 4.243 1.757A6 6 0 0112 21a9 9 0 000-18z"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
-      </Menu>
+    </Menu>
   );
 };
 
-// Menu component wrapper
 export const Menu = ({
   setActive,
   children,
@@ -87,14 +117,13 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)}
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-6 px-10 py-6"
+      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-xl flex justify-center space-x-6 px-10 py-6 transition-all duration-500 ease-in-out"
     >
       {children}
     </nav>
   );
 };
 
-// Individual menu item
 export const MenuItem = ({
   setActive,
   active,
@@ -110,7 +139,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+        className="cursor-pointer text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-400"
       >
         {item}
       </motion.p>
@@ -136,40 +165,6 @@ export const MenuItem = ({
   );
 };
 
-// Product preview block
-export const ProductItem = ({
-  title,
-  description,
-  href,
-  src,
-}: {
-  title: string;
-  description: string;
-  href: string;
-  src: string;
-}) => {
-  return (
-    <a href={href} className="flex space-x-2">
-      <img
-        src={src}
-        width={140}
-        height={70}
-        alt={title}
-        className="shrink-0 rounded-md shadow-2xl"
-      />
-      <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
-          {title}
-        </h4>
-        <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
-          {description}
-        </p>
-      </div>
-    </a>
-  );
-};
-
-// Simple link hover
 export const HoveredLink = ({
   children,
   ...rest
@@ -177,7 +172,7 @@ export const HoveredLink = ({
   return (
     <a
       {...rest}
-      className="block text-neutral-700 dark:text-neutral-200 hover:text-black dark:hover:text-white"
+      className="block text-neutral-700 dark:text-neutral-200 hover:text-black dark:hover:text-white transition-all"
     >
       {children}
     </a>
