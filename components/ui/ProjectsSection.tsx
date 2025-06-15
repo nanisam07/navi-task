@@ -1,0 +1,95 @@
+"use client"
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+
+const projects = [
+  {
+    title: "Kadapa Central",
+    image: "/images/kadapa.png",
+    link: "https://navni.in/project/kadapa-central"
+  },
+  {
+    title: "Vertical Forest Towers",
+    image: "/images/green-towers.png",
+    link: "https://navni.in/project/green-towers"
+  },
+  {
+    title: "Skyline Tower",
+    image: "/images/skyline.png",
+    link: "https://navni.in/project/skyline"
+  },
+  {
+    title: "Luxury Highrise",
+    image: "/images/highrise.png",
+    link: "https://navni.in/project/highrise"
+  },
+  {
+    title: "Corporate Tower",
+    image: "/images/corporate.png",
+    link: "https://navni.in/project/corporate"
+  },
+  {
+    title: "Glass Mall",
+    image: "/images/mall.png",
+    link: "https://navni.in/project/mall"
+  }
+];
+
+export default function ProjectsSection() {
+  return (
+    <section className="bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-20 font-[Poppins]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-5xl font-extrabold text-center mb-14 tracking-tight"
+        >
+          OUR PROJECTS
+        </motion.h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {projects.map((project, index) => (
+            <motion.a
+              href={project.link}
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group relative block rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+            >
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={500}
+                height={300}
+                className="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/50 backdrop-blur-md flex items-end p-5 transition-all duration-300 group-hover:bg-black/70">
+                <h3 className="text-xl font-semibold text-white drop-shadow-lg">
+                  {project.title}
+                </h3>
+              </div>
+            </motion.a>
+          ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <motion.a
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
+            href="/blog"
+            className="inline-block px-8 py-3 bg-pink-600 text-white rounded-full font-bold text-lg shadow-xl hover:bg-pink-700 transition"
+          >
+            View All News →
+          </motion.a>
+        </div>
+      </div>
+    </section>
+  );
+}
