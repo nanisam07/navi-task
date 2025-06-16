@@ -6,32 +6,32 @@ import Image from "next/image";
 const projects = [
   {
     title: "Kadapa Central",
-    image: "/images/kadapa.png",
+    image: "/images/one11.png",
     link: "https://navni.in/project/kadapa-central"
   },
   {
-    title: "Vertical Forest Towers",
-    image: "/images/green-towers.png",
+    title: "360 LIFE TOWERS - 1",
+    image: "/images/two.png",
     link: "https://navni.in/project/green-towers"
   },
   {
-    title: "Skyline Tower",
-    image: "/images/skyline.png",
+    title: "MY HOME 99",
+    image: "/images/myhome99.png",
     link: "https://navni.in/project/skyline"
   },
   {
-    title: "Luxury Highrise",
-    image: "/images/highrise.png",
+    title: "HETRO DRUGS LIMITED ",
+    image: "/images/hetrogrug.png",
     link: "https://navni.in/project/highrise"
   },
   {
-    title: "Corporate Tower",
-    image: "/images/corporate.png",
+    title: "BOMMIDI ELIE @ LB NAGAR  ",
+    image: "/images/bommidi.png",
     link: "https://navni.in/project/corporate"
   },
   {
-    title: "Glass Mall",
-    image: "/images/mall.png",
+    title: "FARM HOUSE ",
+    image: "/images/farmhouse.png",
     link: "https://navni.in/project/mall"
   }
 ];
@@ -70,7 +70,7 @@ export default function ProjectsSection() {
                 height={300}
                 className="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black/50 backdrop-blur-md flex items-end p-5 transition-all duration-300 group-hover:bg-black/70">
+              <div className="absolute inset-0 bg-black/50 flex items-end p-5 transition-all duration-300 group-hover:bg-black/70">
                 <h3 className="text-xl font-semibold text-white drop-shadow-lg">
                   {project.title}
                 </h3>

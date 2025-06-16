@@ -58,7 +58,7 @@ export default function StrategiesSection() {
             className="rounded-xl overflow-hidden shadow-2xl"
           >
             <Image
-              src="/team.jpg"
+              src="/images/teamsworker.png"
               width={800}
               height={600}
               alt="Team on Site"
