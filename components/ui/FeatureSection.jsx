@@ -15,7 +15,7 @@ export default function FeatureSection() {
           transition={{ duration: 0.8 }}
         >
           <Image
-            src="/images/strati.png" // Replace with your optimized image path in public folder
+            src="/images/Strati.png" // Replace with your optimized image path in public folder
             alt="Team at construction site"
             width={600}
             height={400}
