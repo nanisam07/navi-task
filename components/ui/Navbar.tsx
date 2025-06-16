@@ -1,4 +1,6 @@
 'use client';
+import Link from 'next/link';
+import Image from 'next/image';
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -34,7 +36,7 @@ export const NavbarMenu = () => {
     'HOME',
     'ABOUT US',
     'SERVICES',
-    'OUR PEOCESS',
+    'OUR PROCESS',
     'OUR PROJECTS',
     'CLIENTS',
     'TEAM',
@@ -47,12 +49,18 @@ export const NavbarMenu = () => {
     <Menu setActive={setHovered}>
       <div className="flex items-center justify-between w-full max-w-7xl mx-auto px-4">
         {/* Logo */}
-        <a href="/" className="flex items-center space-x-2">
-          <img src="/images/logo.png" alt="Logo" className="h-10 w-10 object-contain" />
+        <Link href="/" className="flex items-center space-x-2">
+          <Image
+            src="/images/logo.png"
+            alt="Logo"
+            width={40}
+            height={40}
+            className="object-contain"
+          />
           <span className="text-xl font-serif font-bold text-black dark:text-white">
             NANVI
           </span>
-        </a>
+        </Link>
 
         {/* Links + Toggle */}
         <div className="flex items-center space-x-6">
@@ -170,11 +178,12 @@ export const HoveredLink = ({
   ...rest
 }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
   return (
-    <a
+    <Link
       {...rest}
+      href={rest.href || '#'}
       className="block text-neutral-700 dark:text-neutral-200 hover:text-black dark:hover:text-white transition-all"
     >
       {children}
-    </a>
+    </Link>
   );
 };
