@@ -10,7 +10,7 @@ import FeatureSection from "@/components/ui/FeatureSection";
 import StructuralFloors from "@/components/ui/StructuralFloors";
 import Projects from "@/components/ui/Projects";
 import StrategiesSection from "@/components/ui/StrategiesSection";
-import TeamSection from "../components/ui/TeamSectio";
+import TeamSection from "../components/ui/TeamSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import Footer from "@/components/Footer";
 // ✅ Dynamically import StatsSection to prevent hydration errors
@@ -31,23 +31,7 @@ export default function Home() {
     { title: "SaaS Dashboard8", link: "https://dashboard.example.com", thumbnail: "/images/one11.png" },
   ];
 
-  const testimonials = [
-    {
-      name: "John Doe",
-      designation: "CEO, Example Corp",
-      src: "/images/one11.png",
-    },
-    {
-      name: "Jane Smith",
-      designation: "Project Manager, BuildIt",
-      quote: "Their attention to detail and quality is unmatched in the industry.",
-    },
-    {
-      name: "Alice Johnson",
-      designation: "Architect, Design Studio",
-      quote: "Innovative solutions that exceeded our expectations every time.",
-    },
-  ];
+  
 
   return (
     <>

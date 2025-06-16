@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 import {
   motion,
   useScroll,
@@ -114,7 +116,6 @@ export const Header = () => {
     </div>
   );
 };
-
 export const ProductCard = ({
   product,
   translate,
@@ -137,18 +138,16 @@ export const ProductCard = ({
       key={product.title}
       className="group/product h-96 w-[30rem] relative shrink-0"
     >
-      <a
-        href={product.link}
-        className="block group-hover/product:shadow-2xl "
-      >
-        <img
+      <Link href={product.link} className="block group-hover/product:shadow-2xl relative w-full h-full">
+        <Image
           src={product.thumbnail}
-          height="600"
-          width="600"
-          className="object-cover object-left-top absolute h-full w-full inset-0"
           alt={product.title}
+          fill
+          className="object-cover object-left-top absolute inset-0"
+          priority // optional: improves LCP if it's above the fold
         />
-      </a>
+      </Link>
+
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
       <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
         {product.title}
@@ -156,3 +155,4 @@ export const ProductCard = ({
     </motion.div>
   );
 };
+export default HeroSection;

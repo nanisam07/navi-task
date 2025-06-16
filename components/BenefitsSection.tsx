@@ -26,18 +26,7 @@ const strategies = [
   "Growth",
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.2,
-      duration: 0.6,
-      ease: [0.42, 0, 0.58, 1], // cubic-bezier for easeOut
-    },
-  }),
-};
+
 
 const BenefitsSection = () => {
   return (
