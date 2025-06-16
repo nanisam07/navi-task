@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "NAVNI - NAVNI  ",
-  description: "cREATED BY SAMUEL",
+  description: "CREATED BY SAMUEL",
 };
 
 export default function RootLayout({
