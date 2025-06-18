@@ -1,7 +1,7 @@
 'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import type { Transition } from 'framer-motion';
@@ -15,10 +15,23 @@ const transition: Transition = {
   restSpeed: 0.001,
 };
 
+const menuItems = [
+  { label: 'HOME', href: '/' },
+  { label: 'ABOUT US', href: '/about' },
+  { label: 'SERVICES', href: '/services' },
+  { label: 'OUR PROCESS', href: '/process' },
+  { label: 'OUR PROJECTS', href: '/projects' },
+  { label: 'CLIENTS', href: '/clients' }, // ✅ Correct path for App Router
+  { label: 'TEAM', href: '/team' },
+  { label: 'CONTACT US', href: '/contact' },
+  { label: 'BLOG', href: '/blog' },
+  { label: 'WISHLIST', href: '/wishlist' },
+];
+
 export const NavbarMenu = () => {
   const [hovered, setHovered] = useState<string | null>(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [mounted, setMounted] = useState(false); // Fix hydration
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -30,24 +43,13 @@ export const NavbarMenu = () => {
     }
   }, [isDarkMode, mounted]);
 
-  if (!mounted) return null; // Avoid SSR/CSR mismatch
-
-  const menuItems = [
-    'HOME',
-    'ABOUT US',
-    'SERVICES',
-    'OUR PROCESS',
-    'OUR PROJECTS',
-    'CLIENTS',
-    'TEAM',
-    'CONTACT US',
-    'BLOG',
-    'WISHLIST',
-  ];
+  if (!mounted) return null;
 
   return (
-    <Menu setActive={setHovered}>
-      <div className="flex items-center justify-between w-full max-w-7xl mx-auto px-4">
+    <nav
+      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-xl flex justify-center px-10 py-6 transition-all duration-500 ease-in-out"
+    >
+      <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <Image
@@ -62,13 +64,18 @@ export const NavbarMenu = () => {
           </span>
         </Link>
 
-        {/* Links + Toggle */}
+        {/* Menu Items */}
         <div className="flex items-center space-x-6">
-          {menuItems.map((label) => (
-            <MenuItem key={label} item={label} active={hovered} setActive={setHovered}>
-              <HoveredLink href="#">Company</HoveredLink>
-              <HoveredLink href="#">Team</HoveredLink>
-            </MenuItem>
+          {menuItems.map(({ label, href }) => (
+            <Link key={label} href={href}>
+              <motion.p
+                onMouseEnter={() => setHovered(label)}
+                transition={{ duration: 0.3 }}
+                className="cursor-pointer text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-400"
+              >
+                {label}
+              </motion.p>
+            </Link>
           ))}
 
           {/* Dark Mode Toggle Button */}
@@ -111,79 +118,8 @@ export const NavbarMenu = () => {
           </button>
         </div>
       </div>
-    </Menu>
-  );
-};
-
-export const Menu = ({
-  setActive,
-  children,
-}: {
-  setActive: (item: string | null) => void;
-  children: React.ReactNode;
-}) => {
-  return (
-    <nav
-      onMouseLeave={() => setActive(null)}
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-xl flex justify-center space-x-6 px-10 py-6 transition-all duration-500 ease-in-out"
-    >
-      {children}
     </nav>
   );
 };
 
-export const MenuItem = ({
-  setActive,
-  active,
-  item,
-  children,
-}: {
-  setActive: (item: string) => void;
-  active: string | null;
-  item: string;
-  children?: React.ReactNode;
-}) => {
-  return (
-    <div onMouseEnter={() => setActive(item)} className="relative">
-      <motion.p
-        transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-400"
-      >
-        {item}
-      </motion.p>
-      {active === item && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.85, y: 10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={transition}
-          className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4 z-40"
-        >
-          <motion.div
-            transition={transition}
-            layoutId="active"
-            className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
-          >
-            <motion.div layout className="w-max h-full p-4 space-y-2">
-              {children}
-            </motion.div>
-          </motion.div>
-        </motion.div>
-      )}
-    </div>
-  );
-};
-
-export const HoveredLink = ({
-  children,
-  ...rest
-}: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
-  return (
-    <Link
-      {...rest}
-      href={rest.href || '#'}
-      className="block text-neutral-700 dark:text-neutral-200 hover:text-black dark:hover:text-white transition-all"
-    >
-      {children}
-    </Link>
-  );
-};
+export default NavbarMenu;
