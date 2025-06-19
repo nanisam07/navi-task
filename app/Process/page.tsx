@@ -55,7 +55,7 @@ export default function ProcessSection() {
         {processSteps.map((step, index) => (
           <motion.div
             key={index}
-            className="bg-gradient-to-br from-white via-slate-100 to-sky-50 border border-gray-200 rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-500"
+            className="bg-gradient-to-br from-white via-slate-100 to-sky-50 border border-gray-200 rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-500 font-serif"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
