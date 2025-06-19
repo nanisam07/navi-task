@@ -2,81 +2,80 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Sparkles, Wrench, ShieldCheck, Lightbulb } from 'lucide-react';
-import Footer from '@/components/Footer'; // adjust the path if your footer is located somewhere else
+import Footer from '@/components/Footer'; // Adjust path if needed
 
 const services = [
   {
     title: 'Post-Tensioning Solutions',
     description:
       'Advanced post-tensioning methods that reinforce concrete structures for durability and efficiency.',
-    image: '/services/post-tension.jpg',
+    image: '/images/services/maintanence.jpg',
   },
   {
     title: 'Design and Implementation',
     description:
       'Custom structural designs and precise implementation tailored to each construction project.',
-    image: '/services/design.jpg',
+    image: '/images/services/civil.jpg',
   },
   {
     title: 'Project Management',
     description:
       'Professional oversight to ensure timely, cost-effective, and quality project delivery.',
-    image: '/services/management.jpg',
+    image: '/images/services/management.jpg',
   },
   {
     title: 'Maintenance and Repair',
     description:
       'Ongoing maintenance services to keep your infrastructure strong and secure.',
-    image: '/services/maintenance.jpg',
+    image: '/images/services/maintanence.jpg',
   },
   {
     title: 'Civil Works',
     description:
       'Expert civil engineering services for foundations, roads, and public infrastructure.',
-    image: '/services/civil.jpg',
+    image: '/images/services/civil.jpg',
   },
   {
     title: 'Quality Assurance and Control',
     description:
       'Strict QA & QC protocols to meet safety and performance standards.',
-    image: '/services/quality.jpg',
+    image: '/images/services/quality.jpg',
   },
   {
     title: 'Site Inspection & Supervision',
     description:
       'Detailed inspections and hands-on supervision to ensure site safety and compliance.',
-    image: '/services/site-supervision.jpg',
+    image: '/images/services/site-supervision.jpg',
   },
   {
     title: 'Consulting & Technical Support',
     description:
       'Expert guidance and problem-solving for complex engineering challenges.',
-    image: '/services/consulting.jpg',
+    image: '/images/services/management.jpg',
   },
   {
     title: 'Project Documentation & Reporting',
     description:
       'Comprehensive documentation, real-time progress updates, and reporting solutions.',
-    image: '/services/documentation.jpg',
+    image: '/images/services/civil.jpg',
   },
   {
     title: 'Full Turnkey Projects',
     description:
       'End-to-end management from design to handover, ensuring hassle-free execution.',
-    image: '/services/turnkey.jpg',
+    image: '/images/services/site-supervision.jpg',
   },
   {
     title: 'Construction Supervision',
     description:
       'Expert supervision to ensure construction quality, compliance, and timelines.',
-    image: '/services/supervision.jpg',
+    image: '/images/services/quality.jpg',
   },
   {
     title: 'Equipment Supply',
     description:
       'Supplying high-grade construction equipment tailored to site needs.',
-    image: '/services/equipment.jpg',
+    image: '/images/services/equipment.jpg',
   },
 ];
 
@@ -86,7 +85,7 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center text-center px-6">
         <Image
-          src="/services/hero.jpg"
+          src="/images/services/hero.jpg"
           alt="Hero Background"
           layout="fill"
           objectFit="cover"
@@ -155,7 +154,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="relative py-24 px-6 md:px-24 bg-[url('/services/full-project.jpg')] bg-cover bg-center font-serif">
+      <section className="relative py-24 px-6 md:px-24 bg-[url('/images/services/full-project.jpg')] bg-cover bg-center font-serif">
         <div className="bg-black bg-opacity-70 rounded-xl p-10 max-w-2xl text-white">
           <motion.h2
             initial={{ opacity: 0, x: -30 }}
@@ -174,12 +173,11 @@ export default function ServicesPage() {
           </motion.p>
         </div>
       </section>
-          {/* Footer Gap & Component */}
+
+      {/* Footer */}
       <div className="mt-24 w-full">
         <Footer />
       </div>
     </main>
-    
-
   );
 }
