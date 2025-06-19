@@ -56,7 +56,7 @@ export const NavbarMenu = () => {
           {menuItems.map(({ label, href }) => (
             <Link key={label} href={href}>
               <motion.p
-                whileHover={{ scale: 1.1, color: '#3b82f6' }} // Tailwind blue-500
+                whileHover={{ scale: 1.1, color: '#3b82f6' }}
                 transition={{ duration: 0.3 }}
                 className="cursor-pointer text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-400"
               >
@@ -65,7 +65,7 @@ export const NavbarMenu = () => {
             </Link>
           ))}
 
-          {/* Dark Mode Toggle Button */}
+          {/* Dark Mode Toggle */}
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
             className="ml-4 w-10 h-10 flex items-center justify-center rounded-full border dark:border-white border-black hover:bg-black/10 dark:hover:bg-white/10 transition"
