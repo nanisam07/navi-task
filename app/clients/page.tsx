@@ -8,13 +8,13 @@ import {
 } from 'react-icons/fa';
 
 const clients = [
-  '/logos/myhome.png', '/logos/360life.png', '/logos/risinia.png',
-  '/logos/gem.png', '/logos/sln.png', '/logos/abhinandana.png',
-  '/logos/niharika.png', '/logos/greenleaves.png', '/logos/silpa.png',
-  '/logos/idream.png', '/logos/klc.png', '/logos/tamra.png',
-  '/logos/niraj.png', '/logos/callisto.png', '/logos/anmol.png',
-  '/logos/jagsons.png', '/logos/houdini.png', '/logos/ncd.png',
-  '/logos/bhrunda.png', '/logos/hetero.png', '/logos/ira.png', '/logos/ista.png'
+  '/images/logos/C1.png', '/images/logos/C2.png', '/images/logos/C16.png',
+  '/images/logos/C3.png', '/images/logos/C10.png', '/images/logos/C17.png',
+  '/images/logos/C4.png', '/images/logos/C11.png', '/images/logos/C18.png',
+  '/images/logos/C5.png', '/images/logos/C12.png', '/images/logos/C19.png',
+  '/images/logos/C7.png', '/images/logos/C13.png', '/images/logos/C20.png',
+  '/images/logos/C8.png', '/images/logos/C14.png', '/images/logos/C21.png',
+  '/images/logos/C9.png', '/images/logos/C15.png', '/images/logos/C22.png', '/images/logos/C23.png'
 ];
 
 export default function OurClientsWithFooter() {

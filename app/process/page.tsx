@@ -36,7 +36,7 @@ const processSteps = [
 
 export default function ProcessSection() {
   return (
-    <section className="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 py-20 px-6 sm:px-12">
+    <section className="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 py-20 px-6 sm:px-12 font-serif">
       <div className="text-center mb-16">
         <motion.h2
           className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4"
@@ -55,7 +55,7 @@ export default function ProcessSection() {
         {processSteps.map((step, index) => (
           <motion.div
             key={index}
-            className="bg-gradient-to-br from-white via-slate-100 to-sky-50 border border-gray-200 rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-500"
+            className="bg-gradient-to-br from-white via-slate-100 to-sky-50 border border-gray-200 rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-500 font-serif"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
