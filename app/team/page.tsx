@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, Variants } from 'framer-motion';
+import Image from 'next/image';
 import Footer from '@/components/Footer';
 
 const logos = [
@@ -61,10 +62,12 @@ export default function ClientLogos() {
               className="bg-white/10 backdrop-blur-md p-6 rounded-xl flex items-center justify-center shadow-xl border border-white/20 transition-transform duration-500 hover:scale-110 hover:rotate-1 hover:bg-white/20"
               variants={logoVariants}
             >
-              <img
+              <Image
                 src={logo}
-                alt={`Logo ${index}`}
-                className="max-h-16 object-contain transition-transform duration-500 group-hover:scale-110"
+                alt={`Client Logo ${index + 1}`}
+                width={120}
+                height={60}
+                className="object-contain"
               />
             </motion.div>
           ))}

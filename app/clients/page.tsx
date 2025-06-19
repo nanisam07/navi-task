@@ -1,7 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock } from 'react-icons/fa';
+import Image from 'next/image';
+import {
+  FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn,
+  FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock
+} from 'react-icons/fa';
 
 const clients = [
   '/logos/myhome.png', '/logos/360life.png', '/logos/risinia.png',
@@ -11,12 +15,12 @@ const clients = [
   '/logos/niraj.png', '/logos/callisto.png', '/logos/anmol.png',
   '/logos/jagsons.png', '/logos/houdini.png', '/logos/ncd.png',
   '/logos/bhrunda.png', '/logos/hetero.png', '/logos/ira.png', '/logos/ista.png'
-];   
+];
 
 export default function OurClientsWithFooter() {
   return (
     <>
-      {/* OUR CLIENTS SECTION */}
+      {/* CLIENTS SECTION */}
       <section className="relative bg-gradient-to-r from-slate-50 to-slate-200 py-20 px-6">
         <div className="absolute inset-0 bg-[url('/bg-lines.png')] opacity-5 bg-cover pointer-events-none"></div>
 
@@ -44,11 +48,17 @@ export default function OurClientsWithFooter() {
               key={index}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.02 }}
+              transition={{ duration: 0.4, delay: index * 0.02 }}
               viewport={{ once: true }}
               className="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
             >
-              <img src={logo} alt={`Client ${index + 1}`} className="max-h-12 object-contain" />
+              <Image
+                src={logo}
+                alt={`Client ${index + 1}`}
+                width={120}
+                height={60}
+                className="object-contain"
+              />
             </motion.div>
           ))}
         </div>
@@ -57,20 +67,16 @@ export default function OurClientsWithFooter() {
       {/* FOOTER SECTION */}
       <footer className="bg-[#8e2a6c] text-white px-8 py-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Left Column */}
           <div>
             <h3 className="text-xl font-bold mb-4">Build with NAVNI</h3>
             <p className="mb-4 text-sm leading-relaxed">
-              Navni Post Tensioning Systems Pvt. Ltd is a specialised post-tensioning company which
-              provides value-added engineering solutions. Established in 2019, Navni quickly became
-              a specialized player in Post Tensioning Design and Execution.
+              Navni Post Tensioning Systems Pvt. Ltd is a specialised post-tensioning company providing value-added engineering solutions. Established in 2019, Navni quickly became a specialized player in Post Tensioning Design and Execution.
             </p>
             <p className="flex items-center gap-2 text-sm">
               <FaClock /> 09:00 AM to 07:00 PM, Sunday - CLOSED
             </p>
           </div>
 
-          {/* Center Column */}
           <div>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
@@ -82,7 +88,6 @@ export default function OurClientsWithFooter() {
             </ul>
           </div>
 
-          {/* Right Column */}
           <div>
             <h3 className="text-xl font-bold mb-4">Our Offices</h3>
             <div className="space-y-3 text-sm">
@@ -104,7 +109,6 @@ export default function OurClientsWithFooter() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="bg-[#0e3c59] mt-8 px-6 py-4 flex flex-col md:flex-row justify-between items-center text-sm">
           <p>© 2024 Navni Post Tensioning Systems Pvt. Ltd, All Rights Reserved</p>
           <div className="flex gap-4 mt-4 md:mt-0">
