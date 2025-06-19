@@ -36,7 +36,7 @@ const processSteps = [
 
 export default function ProcessSection() {
   return (
-    <section className="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 py-20 px-6 sm:px-12">
+    <section className="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 py-20 px-6 sm:px-12 font-serif">
       <div className="text-center mb-16">
         <motion.h2
           className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4"
