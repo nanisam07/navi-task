@@ -8,13 +8,13 @@ import {
 } from 'react-icons/fa';
 
 const clients = [
-  '/logos/c1.png', '/logos/c2.png', '/logos/c16.png',
-  '/logos/c3.png', '/logos/c10.png', '/logos/c17.png',
-  '/logos/c4.png', '/logos/c11.png', '/logos/c18.png',
-  '/logos/c5.png', '/logos/c12.png', '/logos/c19.png',
-  '/logos/c7.png', '/logos/c13.png', '/logos/c20.png',
-  '/logos/c8.png', '/logos/c14.png', '/logos/c21.png',
-  '/logos/c9.png', '/logos/c15.png', '/logos/c22.png', '/logos/c23.png'
+  '/images/logos/C1.png', '/images/logos/C2.png', '/images/logos/C16.png',
+  '/images/logos/C3.png', '/images/logos/C10.png', '/images/logos/C17.png',
+  '/images/logos/C4.png', '/images/logos/C11.png', '/images/logos/C18.png',
+  '/images/logos/C5.png', '/images/logos/C12.png', '/images/logos/C19.png',
+  '/images/logos/C7.png', '/images/logos/C13.png', '/images/logos/C20.png',
+  '/images/logos/C8.png', '/images/logos/C14.png', '/images/logos/C21.png',
+  '/images/logos/C9.png', '/images/logos/C15.png', '/images/logos/C22.png', '/images/logos/C23.png'
 ];
 
 export default function OurClientsWithFooter() {
