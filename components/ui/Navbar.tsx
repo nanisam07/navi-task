@@ -35,7 +35,7 @@ export const NavbarMenu = () => {
   if (!mounted) return null;
 
   return (
-    <nav className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-xl flex justify-center px-10 py-6 transition-all duration-500 ease-in-out">
+    <nav className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-xl flex justify-center px-10 py-6 transition-all duration-500 ease-in-out font-serif">
       <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
