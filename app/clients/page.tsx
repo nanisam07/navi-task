@@ -8,13 +8,13 @@ import {
 } from 'react-icons/fa';
 
 const clients = [
-  '/logos/myhome.png', '/logos/360life.png', '/logos/risinia.png',
-  '/logos/gem.png', '/logos/sln.png', '/logos/abhinandana.png',
-  '/logos/niharika.png', '/logos/greenleaves.png', '/logos/silpa.png',
-  '/logos/idream.png', '/logos/klc.png', '/logos/tamra.png',
-  '/logos/niraj.png', '/logos/callisto.png', '/logos/anmol.png',
-  '/logos/jagsons.png', '/logos/houdini.png', '/logos/ncd.png',
-  '/logos/bhrunda.png', '/logos/hetero.png', '/logos/ira.png', '/logos/ista.png'
+  '/logos/c1.png', '/logos/c2.png', '/logos/c16.png',
+  '/logos/c3.png', '/logos/c10.png', '/logos/c17.png',
+  '/logos/c4.png', '/logos/c11.png', '/logos/c18.png',
+  '/logos/c5.png', '/logos/c12.png', '/logos/c19.png',
+  '/logos/c7.png', '/logos/c13.png', '/logos/c20.png',
+  '/logos/c8.png', '/logos/c14.png', '/logos/c21.png',
+  '/logos/c9.png', '/logos/c15.png', '/logos/c22.png', '/logos/c23.png'
 ];
 
 export default function OurClientsWithFooter() {
