@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-
+import Footer from '@/components/Footer';
 const masonryImages = [
   '/images/one11.png',
   '/images/myhome99.png',
@@ -76,6 +76,7 @@ export default function MasonryPage() {
             </motion.div>
           ))}
         </div>
+        <Footer />
       </section>
     </div>
   );

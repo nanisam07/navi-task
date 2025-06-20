@@ -137,7 +137,7 @@ export default function About() {
           </h2>
           <div className="md:flex items-center gap-10">
             <Image
-              src="/images/designing-structure.jpg"
+              src="/images/farmhouse.png"
               alt="Design Image"
               width={400}
               height={300}

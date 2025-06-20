@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-
+import Footer from '@/components/Footer';
 const processSteps = [
   {
     title: 'Planning',
@@ -101,6 +101,8 @@ export default function ProcessSection() {
           </motion.div>
         ))}
       </div>
+      <Footer />
     </section>
+  
   );
 }
