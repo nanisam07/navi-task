@@ -8,28 +8,28 @@ const processSteps = [
     title: 'Planning',
     description:
       'Optimizing structural integrity and efficiency through expert post-tensioning planning and execution.',
-    image: 'https://via.placeholder.com/400x250?text=Planning',
+    image: '/images/process/P1.jpg',
     icon: 'https://via.placeholder.com/40?text=P',
   },
   {
     title: 'Competitive',
     description:
       'Staying ahead of industry standards with innovative post-tensioning techniques and practices.',
-    image: 'https://via.placeholder.com/400x250?text=Competitive',
+    image: '/images/process/P2.jpg',
     icon: 'https://via.placeholder.com/40?text=C',
   },
   {
     title: 'Analysis',
     description:
       'Conducting thorough analysis to optimize post-tensioning solutions for structural efficiency.',
-    image: 'https://via.placeholder.com/400x250?text=Analysis',
+    image: '/images/process/P3.png',
     icon: 'https://via.placeholder.com/40?text=A',
   },
   {
     title: 'Execution',
     description:
       'Implementing precision and expertise in post-tensioning execution for superior structural performance.',
-    image: 'https://via.placeholder.com/400x250?text=Execution',
+    image: '/images/process/P4.jpg',
     icon: 'https://via.placeholder.com/40?text=E',
   },
 ];
