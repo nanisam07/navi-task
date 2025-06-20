@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { MotionDiv } from '@/components/MotionWrapper';
 import VisionSection from "@/components/ui/VisionSection";
 import ServiceSection from "@/components/ui/ServiceSection";
@@ -11,8 +12,21 @@ import Image from 'next/image';
 export default function About() {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const blobX = useTransform(x, [0, window.innerWidth], [-100, 100]);
-  const blobY = useTransform(y, [0, window.innerHeight], [-100, 100]);
+
+  // Set default fallback width/height
+  const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 });
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+  }, []);
+
+  const blobX = useTransform(x, [0, windowSize.width], [-100, 100]);
+  const blobY = useTransform(y, [0, windowSize.height], [-100, 100]);
 
   const handleMouse = (e: React.MouseEvent) => {
     x.set(e.clientX);
@@ -156,7 +170,7 @@ export default function About() {
         </MotionDiv>
       </section>
 
-      {/* Custom Sections */}
+      {/* Extra Sections */}
       <VisionSection />
       <ServiceSection />
       <StrategiesSection />
