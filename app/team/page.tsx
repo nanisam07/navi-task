@@ -1,6 +1,7 @@
 'use client';
+
 import { MotionDiv, MotionH2 } from "@/components/MotionWrapper";
-import { useEffect } from "react";
+import Image from "next/image";
 
 export default function Home() {
   const team = [
@@ -29,7 +30,7 @@ export default function Home() {
 
   return (
     <div className="relative bg-gradient-to-b from-gray-100 to-purple-100 text-gray-800 min-h-screen overflow-hidden">
-      {/* Floating Background Blob */}
+      {/* Floating Background Blobs */}
       <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-purple-300 opacity-30 rounded-full blur-3xl animate-pulse-slow z-0" />
       <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] bg-indigo-300 opacity-30 rounded-full blur-2xl animate-pulse-slower z-0" />
 
@@ -81,10 +82,12 @@ export default function Home() {
               whileHover={{ scale: 1.03 }}
               className="bg-white/80 backdrop-blur-md rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row gap-6 items-center p-6"
             >
-              <img
+              <Image
                 src={member.image}
                 alt={member.name}
-                className="w-40 h-40 object-cover rounded-lg shadow-md"
+                width={160}
+                height={160}
+                className="rounded-lg shadow-md object-cover"
               />
               <div>
                 <h3 className="text-xl font-bold">{member.name}</h3>
