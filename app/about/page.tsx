@@ -13,7 +13,6 @@ export default function About() {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  // Set default fallback width/height
   const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 });
 
   useEffect(() => {
@@ -36,29 +35,35 @@ export default function About() {
   return (
     <div
       onMouseMove={handleMouse}
-      className="relative overflow-hidden min-h-screen bg-gradient-to-br from-[#fdfcfb] via-[#e2d1c3] to-[#d3cce3]"
+      className="relative overflow-hidden min-h-screen"
     >
-      {/* Animated Background Blobs */}
-      <motion.div
-        style={{ x: blobX, y: blobY }}
-        className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#c084fc] opacity-30 rounded-full blur-3xl"
-      />
-      <motion.div
-        style={{ x: blobX, y: blobY }}
-        className="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#a5b4fc] opacity-25 rounded-full blur-2xl"
+      {/* 🎞️ Fullscreen Video Background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-40"
+        src="/videos/bg2.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
       />
 
-      {/* Hero Section */}
-      <section
-        className="relative bg-cover bg-center py-32 px-6 text-left"
-        style={{ backgroundImage: "url('/images/about-hero.jpg')" }}
-      >
-        <div className="absolute inset-0 bg-black/50 z-0" />
+      {/* ✨ Floating Background Blobs */}
+      <motion.div
+        style={{ x: blobX, y: blobY }}
+        className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-purple-400 opacity-30 rounded-full blur-[180px] mix-blend-multiply pointer-events-none z-10"
+      />
+      <motion.div
+        style={{ x: blobY, y: blobX }}
+        className="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-indigo-300 opacity-30 rounded-full blur-[160px] mix-blend-multiply pointer-events-none z-10"
+      />
+
+      {/* 🌟 Hero Section */}
+      <section className="relative z-20 py-32 px-6 text-left">
         <MotionDiv
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 max-w-5xl mx-auto text-white"
+          className="max-w-5xl mx-auto text-white"
         >
           <p className="text-sm uppercase tracking-widest mb-2 text-blue-200">
             Explore the features
@@ -74,8 +79,8 @@ export default function About() {
         </MotionDiv>
       </section>
 
-      {/* Main About Section */}
-      <section className="max-w-4xl mx-auto p-6 mt-10 relative z-10 space-y-10">
+      {/* 🧱 Main About Section */}
+      <section className="max-w-4xl mx-auto p-6 mt-10 relative z-20 space-y-10">
         <MotionDiv
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +96,7 @@ export default function About() {
           </p>
         </MotionDiv>
 
-        {/* Our Values */}
+        {/* 🔶 Our Values */}
         <MotionDiv
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -101,30 +106,22 @@ export default function About() {
         >
           <h2 className="text-3xl font-bold text-center mb-6">OUR VALUES</h2>
           <div className="grid md:grid-cols-4 gap-4 text-center text-sm">
-            <div>
-              <div className="text-3xl mb-2">📐</div>
-              <h3 className="font-bold">Integrity</h3>
-              <p>Meticulous design & execution ensuring structural safety.</p>
-            </div>
-            <div>
-              <div className="text-3xl mb-2">🔧</div>
-              <h3 className="font-bold">Excellence</h3>
-              <p>Commitment to superior design and structural performance.</p>
-            </div>
-            <div>
-              <div className="text-3xl mb-2">📅</div>
-              <h3 className="font-bold">Collaboration</h3>
-              <p>Partnerships for seamless design & execution workflows.</p>
-            </div>
-            <div>
-              <div className="text-3xl mb-2">🚀</div>
-              <h3 className="font-bold">Innovation</h3>
-              <p>Creative approaches to post-tensioning for new heights.</p>
-            </div>
+            {[
+              { icon: '📐', title: 'Integrity', desc: 'Meticulous design & execution ensuring structural safety.' },
+              { icon: '🔧', title: 'Excellence', desc: 'Commitment to superior design and structural performance.' },
+              { icon: '📅', title: 'Collaboration', desc: 'Partnerships for seamless design & execution workflows.' },
+              { icon: '🚀', title: 'Innovation', desc: 'Creative approaches to post-tensioning for new heights.' }
+            ].map((value, idx) => (
+              <div key={idx}>
+                <div className="text-3xl mb-2">{value.icon}</div>
+                <h3 className="font-bold">{value.title}</h3>
+                <p>{value.desc}</p>
+              </div>
+            ))}
           </div>
         </MotionDiv>
 
-        {/* Designing & Implementation */}
+        {/* 🏗️ Designing & Implementation */}
         <MotionDiv
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -148,7 +145,11 @@ export default function About() {
                 Designing & Implementation
               </h3>
               <div className="space-y-3">
-                {[{ label: 'Residential Buildings', value: 70 }, { label: 'Architecture', value: 93 }, { label: 'Construction', value: 82 }].map((item, idx) => (
+                {[
+                  { label: 'Residential Buildings', value: 70 },
+                  { label: 'Architecture', value: 93 },
+                  { label: 'Construction', value: 82 }
+                ].map((item, idx) => (
                   <div key={idx}>
                     <div className="flex justify-between text-sm mb-1">
                       <span>{item.label}</span>
@@ -170,13 +171,21 @@ export default function About() {
         </MotionDiv>
       </section>
 
-      {/* Extra Sections */}
+      {/* 🔧 Additional Sections */}
       <VisionSection />
       <ServiceSection />
       <StrategiesSection />
 
-      {/* Footer */}
-      <Footer />
+      {/* 🔻 Footer */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="relative z-20"
+      >
+        <Footer />
+      </motion.div>
     </div>
   );
 }

@@ -10,8 +10,6 @@ import {
   MotionValue,
 } from "motion/react";
 
-
-
 export const HeroSection = ({
   products,
 }: {
@@ -24,6 +22,7 @@ export const HeroSection = ({
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);
+
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -56,66 +55,95 @@ export const HeroSection = ({
     useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
     springConfig
   );
+
+  // 🎯 Two separate opacities for each video
+  const video1Opacity = useSpring(
+    useTransform(scrollYProgress, [0.1, 0.25], [0, 1]),
+    springConfig
+  );
+  const video2Opacity = useSpring(
+    useTransform(scrollYProgress, [0.25, 0.4], [0, 1]),
+    springConfig
+  );
+
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d] "
+      className="relative h-[300vh] py-40 overflow-hidden antialiased flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
-      <Header />
-      <motion.div
-        style={{
-          rotateX,
-          rotateZ,
-          translateY,
-          opacity,
-        }}
-        className=""
-      >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
-          {firstRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
-          ))}
+      {/* 🔥 Background Videos Appearing One After Another */}
+      <div className="absolute inset-0 z-0">
+        <motion.video
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
+          style={{ opacity: video1Opacity }}
+          src="/videos/bg1.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        
+      </div>
+
+      {/* 🧱 Foreground Content */}
+      <div className="relative z-10">
+        <Header />
+        <motion.div
+          style={{
+            rotateX,
+            rotateZ,
+            translateY,
+            opacity,
+          }}
+        >
+          <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
+            {firstRow.map((product) => (
+              <ProductCard
+                product={product}
+                translate={translateX}
+                key={product.title}
+              />
+            ))}
+          </motion.div>
+          <motion.div className="flex flex-row mb-20 space-x-20">
+            {secondRow.map((product) => (
+              <ProductCard
+                product={product}
+                translate={translateXReverse}
+                key={product.title}
+              />
+            ))}
+          </motion.div>
+          <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
+            {thirdRow.map((product) => (
+              <ProductCard
+                product={product}
+                translate={translateX}
+                key={product.title}
+              />
+            ))}
+          </motion.div>
         </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
-          {secondRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXReverse}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
-          {thirdRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 };
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0 color ">
+    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold dark:text-white font-serif">
         EXPLORE THE FEATURES <br /> DESIGNING AND EXECUTION
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 fill-white font-serif">
-        Post-tensioning specialists are trined to optomize structural designs, reducing material usage and enhancing efficiency without 
-        compromising structural integrity. <br />
+      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 font-serif">
+        Post-tensioning specialists are trained to optimize structural designs,
+        reducing material usage and enhancing efficiency without compromising
+        structural integrity.
       </p>
     </div>
   );
 };
+
 export const ProductCard = ({
   product,
   translate,
@@ -129,25 +157,22 @@ export const ProductCard = ({
 }) => {
   return (
     <motion.div
-      style={{
-        x: translate,
-      }}
-      whileHover={{
-        y: -20,
-      }}
-      key={product.title}
+      style={{ x: translate }}
+      whileHover={{ y: -20 }}
       className="group/product h-96 w-[30rem] relative shrink-0"
     >
-      <Link href={product.link} className="block group-hover/product:shadow-2xl relative w-full h-full">
+      <Link
+        href={product.link}
+        className="block group-hover/product:shadow-2xl relative w-full h-full"
+      >
         <Image
           src={product.thumbnail}
           alt={product.title}
           fill
           className="object-cover object-left-top absolute inset-0"
-          priority // optional: improves LCP if it's above the fold
+          priority
         />
       </Link>
-
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
       <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
         {product.title}
@@ -155,4 +180,5 @@ export const ProductCard = ({
     </motion.div>
   );
 };
+
 export default HeroSection;
