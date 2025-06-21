@@ -14,7 +14,7 @@ const clients = [
   '/images/logos/C5.png', '/images/logos/C12.png', '/images/logos/C19.png',
   '/images/logos/C7.png', '/images/logos/C13.png', '/images/logos/C20.png',
   '/images/logos/C8.png', '/images/logos/C14.png', '/images/logos/C21.png',
-  '/images/logos/C9.png', '/images/logos/C15.png', '/images/logos/C22.png', '/images/logos/C23.png'
+  '/images/logos/C9.png', '/images/logos/C15.png', '/images/logos/C22.png', '/images/logos/CGIT 23.png'
 ];
 
 export default function OurClientsWithFooter() {

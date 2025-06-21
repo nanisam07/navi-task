@@ -61,10 +61,7 @@ export const HeroSection = ({
     useTransform(scrollYProgress, [0.1, 0.25], [0, 1]),
     springConfig
   );
-  const video2Opacity = useSpring(
-    useTransform(scrollYProgress, [0.25, 0.4], [0, 1]),
-    springConfig
-  );
+  
 
   return (
     <div
