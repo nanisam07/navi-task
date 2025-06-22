@@ -33,7 +33,7 @@ const cardVariants: Variants = {
     y: 0,
     opacity: 1,
     transition: {
-      type: "spring",
+      type: 'spring',
       bounce: 0.4,
       duration: 0.8,
     },
@@ -42,9 +42,9 @@ const cardVariants: Variants = {
 
 const TeamSection = () => {
   return (
-    <div className="relative overflow-hidden min-h-screen py-16 px-4 sm:px-6 font-serif">
+    <div className="relative overflow-hidden py-12 px-4 sm:px-6 font-serif">
       {/* Animated Gradient Background */}
-      <div className="absolute inset-0 z-0 animate-gradient bg-gradient-to-br from-purple-600 via-pink-500 to-yellow-400 blur-3xl opacity-30" />
+      <div className="absolute inset-0 z-0 animate-gradient bg-gradient-to-br from-purple-600 via-pink-500 to-yellow-400 blur-3xl opacity-30 pointer-events-none" />
 
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 drop-shadow-lg text-black dark:text-white">
         OUR TEAM

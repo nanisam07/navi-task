@@ -40,9 +40,9 @@ export default function StrategiesSection() {
   };
 
   return (
-    <div className="relative overflow-hidden min-h-screen py-16 px-4 sm:px-6 md:px-12 font-serif">
+    <div className="relative overflow-hidden py-10 px-4 sm:px-6 md:px-12 font-serif">
       {/* Animated Gradient Background */}
-      <div className="absolute inset-0 z-0 animate-gradient bg-gradient-to-br from-purple-600 via-pink-500 to-yellow-400 blur-3xl opacity-30" />
+      <div className="absolute inset-0 z-0 animate-gradient bg-gradient-to-br from-purple-600 via-pink-500 to-yellow-400 blur-3xl opacity-30 pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-10 sm:mb-12 drop-shadow-md tracking-wide">
@@ -55,7 +55,7 @@ export default function StrategiesSection() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
-            className="rounded-xl overflow-hidden shadow-2xl"
+            className="rounded-xl overflow-hidden shadow-2xl w-full h-auto max-h-[400px] sm:max-h-[500px]"
           >
             <Image
               src="/images/teamsworker.png"
