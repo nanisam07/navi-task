@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Fade, Slide } from 'react-awesome-reveal';
+import NavbarMenu from '@/components/ui/Navbar';
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -46,6 +47,8 @@ export default function ContactUs() {
   ];
 
   return (
+    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+      <NavbarMenu />
     <div className="bg-white text-gray-900 font-sans">
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-700 to-indigo-800 text-white text-center px-6">
@@ -201,6 +204,7 @@ export default function ContactUs() {
           </div>
         </Fade>
       </footer>
+    </div>
     </div>
   );
 }

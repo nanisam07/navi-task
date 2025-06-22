@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import React from "react"
-import { motion} from "framer-motion"
-import { DraftingCompass, Drill, Construction } from "lucide-react"
+import React from "react";
+import { motion } from "framer-motion";
+import { DraftingCompass, Drill, Construction } from "lucide-react";
 
 const services = [
   {
@@ -23,12 +23,12 @@ const services = [
     desc: "Modern architecture requires column-free areas and shallower beam depths. NAVNI meets these demands where conventional RCC design falls short.",
     animation: { x: -50, opacity: 0, duration: 0.6 },
   },
-]
+];
 
 export default function ServicesSection() {
   return (
-    <section className="bg-purple-800 text-white py-20 px-4 font-serif">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
+    <section className="bg-purple-800 text-white py-16 sm:py-20 px-4 sm:px-6 font-serif">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
         {services.map((service, index) => (
           <motion.div
             key={index}
@@ -36,18 +36,18 @@ export default function ServicesSection() {
             whileInView={{ x: 0, y: 0, scale: 1, opacity: 1 }}
             transition={{ duration: service.animation.duration, delay: index * 0.2 }}
             viewport={{ once: true }}
-            className="bg-purple-700 rounded-2xl p-6 shadow-xl hover:scale-105 transition-all duration-300 group"
+            className="bg-purple-700 rounded-2xl p-6 sm:p-8 shadow-xl hover:scale-105 transition-all duration-300 group"
           >
             <div className="mb-4 text-white group-hover:text-yellow-300 transition-all">
               {service.icon}
             </div>
-            <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-            <p className="text-sm leading-relaxed text-white/90">
+            <h3 className="text-lg sm:text-xl font-bold mb-2">{service.title}</h3>
+            <p className="text-sm sm:text-base leading-relaxed text-white/90">
               {service.desc}
             </p>
           </motion.div>
         ))}
       </div>
     </section>
-  )
+  );
 }

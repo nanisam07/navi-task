@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const menuItems = [
   { label: 'HOME', href: '/' },
@@ -21,6 +21,7 @@ const menuItems = [
 export const NavbarMenu = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -35,29 +36,21 @@ export const NavbarMenu = () => {
   if (!mounted) return null;
 
   return (
-    <nav className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-xl flex justify-center px-10 py-6 transition-all duration-500 ease-in-out font-serif">
-      <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
+    <nav className="relative z-50 mx-4 my-6 rounded-3xl px-6 py-4 shadow-2xl bg-white/80 dark:bg-black/70 backdrop-blur-md border border-gray-200 dark:border-white/10 font-serif">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <Image
-            src="/images/logo.png"
-            alt="Logo"
-            width={40}
-            height={40}
-            className="object-contain"
-          />
-          <span className="text-xl font-serif font-bold text-black dark:text-white">
-            NANVI
-          </span>
+          <Image src="/images/logo.png" alt="Logo" width={40} height={40} />
+          <span className="text-xl font-bold dark:text-white">NANVI</span>
         </Link>
 
-        {/* Menu Items */}
-        <div className="flex items-center space-x-6">
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center space-x-6">
           {menuItems.map(({ label, href }) => (
             <Link key={label} href={href}>
               <motion.p
-                whileHover={{ scale: 1.1, color: '#3b82f6' }}
-                transition={{ duration: 0.3 }}
+                whileHover={{ scale: 1.05, color: '#3b82f6' }}
+                transition={{ duration: 0.2 }}
                 className="cursor-pointer text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-400"
               >
                 {label}
@@ -84,7 +77,43 @@ export const NavbarMenu = () => {
             )}
           </button>
         </div>
+
+        {/* Mobile Toggle Button */}
+        <div className="lg:hidden">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2 rounded-md border dark:border-white border-black"
+          >
+            <svg className="w-6 h-6 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isMobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="lg:hidden mt-4 px-2 space-y-3"
+          >
+            {menuItems.map(({ label, href }) => (
+              <Link key={label} href={href} onClick={() => setIsMobileMenuOpen(false)}>
+                <p className="text-sm text-black dark:text-white hover:text-blue-500 dark:hover:text-blue-400">
+                  {label}
+                </p>
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

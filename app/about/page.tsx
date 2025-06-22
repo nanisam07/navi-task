@@ -8,6 +8,7 @@ import StrategiesSection from "@/components/ui/StrategiesSection";
 import Footer from '@/components/Footer';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import Image from 'next/image';
+import NavbarMenu from '@/components/ui/Navbar';
 
 export default function About() {
   const x = useMotionValue(0);
@@ -33,6 +34,8 @@ export default function About() {
   };
 
   return (
+    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+      <NavbarMenu />
     <div
       onMouseMove={handleMouse}
       className="relative overflow-hidden min-h-screen"
@@ -186,6 +189,7 @@ export default function About() {
       >
         <Footer />
       </motion.div>
+    </div>
     </div>
   );
 }

@@ -40,16 +40,16 @@ export default function StrategiesSection() {
   };
 
   return (
-    <div className="relative overflow-hidden min-h-screen py-16 px-6 sm:px-12 font-serif">
+    <div className="relative overflow-hidden min-h-screen py-16 px-4 sm:px-6 md:px-12 font-serif">
       {/* Animated Gradient Background */}
-      <div className="absolute inset-0 z-0 animate-gradient bg-gradient-to-br from-purple-600 via-pink-500 to-yellow-400 blur-3xl opacity-30 font-serif" />
+      <div className="absolute inset-0 z-0 animate-gradient bg-gradient-to-br from-purple-600 via-pink-500 to-yellow-400 blur-3xl opacity-30" />
 
-      <div className="relative z-10 max-w-6xl mx-auto font-serif">
-        <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 drop-shadow-md tracking-wide font-serif">
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-10 sm:mb-12 drop-shadow-md tracking-wide">
           STRATEGIES
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -62,28 +62,28 @@ export default function StrategiesSection() {
               width={800}
               height={600}
               alt="Team on Site"
-              className="rounded-xl object-cover"
+              className="rounded-xl object-cover w-full h-full"
             />
           </motion.div>
 
           {/* Strategy Items */}
-          <div className="space-y-6 w-full">
+          <div className="space-y-5 w-full">
             {strategies.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 * index }}
-                className="bg-white bg-opacity-90 backdrop-blur-md border-l-4 border-purple-500 rounded-lg p-5 shadow-lg hover:shadow-2xl transition duration-300"
+                className="bg-white bg-opacity-90 backdrop-blur-md border-l-4 border-purple-500 rounded-lg p-4 sm:p-5 shadow-lg hover:shadow-2xl transition duration-300"
               >
                 <button
                   className="flex justify-between items-center w-full text-left"
                   onClick={() => toggleIndex(index)}
                 >
-                  <h3 className="text-lg md:text-xl font-bold text-purple-800">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-purple-800">
                     {item.title}
                   </h3>
-                  <span className="text-purple-600 text-2xl font-bold">
+                  <span className="text-purple-600 text-xl sm:text-2xl font-bold">
                     {activeIndex === index ? '−' : '+'}
                   </span>
                 </button>
@@ -94,7 +94,7 @@ export default function StrategiesSection() {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="text-gray-800 mt-3 text-sm leading-relaxed"
+                      className="text-gray-800 mt-2 text-sm leading-relaxed"
                     >
                       {item.description}
                     </motion.p>

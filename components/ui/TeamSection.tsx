@@ -42,11 +42,15 @@ const cardVariants: Variants = {
 
 const TeamSection = () => {
   return (
-    <div className="relative overflow-hidden min-h-screen py-16 px-6 sm:px-12 font-serif">
+    <div className="relative overflow-hidden min-h-screen py-16 px-4 sm:px-6 font-serif">
       {/* Animated Gradient Background */}
       <div className="absolute inset-0 z-0 animate-gradient bg-gradient-to-br from-purple-600 via-pink-500 to-yellow-400 blur-3xl opacity-30" />
-      <h2 className="text-4xl font-bold text-center mb-12 drop-shadow-lg text-black dark:text-white">OUR TEAM</h2>
-      <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 drop-shadow-lg text-black dark:text-white">
+        OUR TEAM
+      </h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {teamMembers.map((member, index) => (
           <motion.div
             key={index}
@@ -56,7 +60,7 @@ const TeamSection = () => {
             viewport={{ once: true, amount: 0.5 }}
             variants={cardVariants}
           >
-            <div className="relative h-80 w-full">
+            <div className="relative h-64 sm:h-80 w-full">
               <Image
                 src={member.image}
                 alt={member.name}
@@ -65,11 +69,11 @@ const TeamSection = () => {
                 className="hover:scale-110 transition duration-500"
               />
             </div>
-            <div className="p-6 text-center text-gray-900 dark:text-white">
-              <p className="text-sm font-semibold text-indigo-600 mb-1 uppercase tracking-wide">
+            <div className="p-4 sm:p-6 text-center text-gray-900 dark:text-white">
+              <p className="text-xs sm:text-sm font-semibold text-indigo-600 mb-1 uppercase tracking-wide">
                 {member.title}
               </p>
-              <h3 className="text-lg font-bold leading-tight">
+              <h3 className="text-sm sm:text-lg font-bold leading-tight">
                 {member.name}
               </h3>
             </div>

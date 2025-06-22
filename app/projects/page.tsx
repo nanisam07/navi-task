@@ -9,9 +9,12 @@ const masonryImages = [
   '/images/two.png',
   '/images/vision.png',
 ];
+import NavbarMenu from '@/components/ui/Navbar';
 
 export default function MasonryPage() {
   return (
+    <div className="bg-white text-gray-900 font-sans">
+      <NavbarMenu />
     <div className="min-h-screen bg-gradient-to-br from-[#f0f4ff] via-[#dfe9f3] to-[#e0f7fa] text-gray-800 font-sans">
       {/* Hero Section */}
       <section className="text-center pt-24 pb-16 px-4 bg-gradient-to-br from-white/60 to-blue-50/60 backdrop-blur-lg shadow-inner">
@@ -78,6 +81,7 @@ export default function MasonryPage() {
         </div>
         <Footer />
       </section>
+    </div>
     </div>
   );
 }

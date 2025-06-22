@@ -2,6 +2,7 @@
 
 import { MotionDiv, MotionH2 } from "@/components/MotionWrapper";
 import Image from "next/image";
+import NavbarMenu from "@/components/ui/Navbar";
 
 export default function Home() {
   const team = [
@@ -29,6 +30,8 @@ export default function Home() {
   ];
 
   return (
+    <div className="bg-white text-gray-900 font-sans">
+      <NavbarMenu />
     <div className="relative bg-gradient-to-b from-gray-100 to-purple-100 text-gray-800 min-h-screen overflow-hidden">
       {/* Floating Background Blobs */}
       <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-purple-300 opacity-30 rounded-full blur-3xl animate-pulse-slow z-0" />
@@ -170,6 +173,7 @@ export default function Home() {
           © 2024 Navni Post Tensioning Systems Pvt. Ltd, All Rights Reserved
         </div>
       </MotionDiv>
+    </div>
     </div>
   );
 }

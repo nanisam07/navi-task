@@ -6,6 +6,7 @@ import {
   FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn,
   FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock
 } from 'react-icons/fa';
+import NavbarMenu from '@/components/ui/Navbar';
 
 const clients = [
   '/images/logos/C1.png', '/images/logos/C2.png', '/images/logos/C16.png',
@@ -20,6 +21,9 @@ const clients = [
 export default function OurClientsWithFooter() {
   return (
     <>
+      <NavbarMenu />
+
+      {/* HERO SECTION */}
       {/* CLIENTS SECTION */}
       <section className="relative bg-gradient-to-r from-slate-50 to-slate-200 py-20 px-6">
         <div className="absolute inset-0 bg-[url('/bg-lines.png')] opacity-5 bg-cover pointer-events-none"></div>
