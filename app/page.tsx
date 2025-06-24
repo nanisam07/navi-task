@@ -19,16 +19,20 @@ const StatsSection = dynamic(() => import("@/components/StatsSection"), { ssr: f
 
 export default function Home() {
   const projects = [
-    { title: "My Portfolio", link: "https://yourportfolio.com", thumbnail: "/images/one11.png" },
-    { title: "E-Commerce Site", link: "https://example.com", thumbnail: "/images/three.png" },
-    { title: "Blog Platform", link: "https://blog.example.com", thumbnail: "/images/two.png" },
-    { title: "SaaS Dashboard", link: "https://dashboard.example.com", thumbnail: "/images/three.png" },
-    { title: "SaaS Dashboard1", link: "https://dashboard.example.com", thumbnail: "/images/two.png" },
-    { title: "SaaS Dashboard3", link: "https://dashboard.example.com", thumbnail: "/images/one11.png" },
-    { title: "SaaS Dashboard4", link: "https://dashboard.example.com", thumbnail: "/images/three.png" },
-    { title: "SaaS Dashboard5", link: "https://dashboard.example.com", thumbnail: "/images/one11.png" },
-    { title: "SaaS Dashboard6", link: "https://dashboard.example.com", thumbnail: "/images/three.png" },
-    { title: "SaaS Dashboard8", link: "https://dashboard.example.com", thumbnail: "/images/one11.png" },
+    { title: "Client 1", link: "https://yourportfolio.com", thumbnail: "/images/logos/C1.PNG" },
+    { title: "Client 2", link: "https://example.com", thumbnail: "/images/logos/C2.png" },
+    { title: "Client 3", link: "https://blog.example.com", thumbnail: "/images/logos/C3.png" },
+    { title: "Client 4", link: "https://dashboard.example.com", thumbnail: "/images/logos/C4.png" },
+    { title: "Client 5", link: "https://dashboard.example.com", thumbnail: "/images/logos/C5.png" },
+    { title: "Client 6", link: "https://dashboard.example.com", thumbnail: "/images/logos/C6.png" },
+    { title: "Clinet 7", link: "https://dashboard.example.com", thumbnail: "/images/logos/C7.png" },
+    { title: " Client 8", link: "https://dashboard.example.com", thumbnail: "/images/logos/C8.png" },
+    { title: "Client 9 ", link: "https://dashboard.example.com", thumbnail: "/images/logos/C9.png" },
+    { title: "Client 10 ", link: "https://dashboard.example.com", thumbnail: "/images/logos/C10.png" },
+    { title: "Client 11 ", link: "https://dashboard.example.com", thumbnail: "/images/logos/C11.png" },
+    { title: "Client 12 ", link: "https://dashboard.example.com", thumbnail: "/images/logos/C12.png" },
+    { title: "Client 13 ", link: "https://dashboard.example.com", thumbnail: "/images/logos/C13.png" },
+    { title: "Client 14 ", link: "https://dashboard.example.com", thumbnail: "/images/logos/C14.png" },
   ];
 
   

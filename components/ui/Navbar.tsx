@@ -15,7 +15,7 @@ const menuItems = [
   { label: 'TEAM', href: '/team' },
   { label: 'CONTACT US', href: '/contact' },
   { label: 'BLOG', href: '/blog' },
-  { label: 'WISHLIST', href: '/wishlist' },
+  
 ];
 
 export const NavbarMenu = () => {

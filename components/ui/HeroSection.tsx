@@ -19,11 +19,14 @@ export const HeroSection = ({
     thumbnail: string;
   }[];
 }) => {
-  const firstRow = products.slice(0, 5);
-  const secondRow = products.slice(5, 10);
-  const thirdRow = products.slice(10, 15);
-
+  const [hasMounted, setHasMounted] = React.useState(false);
   const ref = React.useRef(null);
+
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  // ✅ HOOKS are called always
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -61,15 +64,22 @@ export const HeroSection = ({
     springConfig
   );
 
+  // ✅ prevent rendering until after mount (to avoid hydration mismatch)
+  if (!hasMounted) return null;
+
+  const firstRow = products.slice(0, 5);
+  const secondRow = products.slice(5, 10);
+  const thirdRow = products.slice(10, 15);
+
   return (
     <div
       ref={ref}
       className="relative h-[300vh] py-24 overflow-hidden antialiased flex flex-col [perspective:1000px] [transform-style:preserve-3d]"
     >
-      {/* 🔥 Video Background */}
+      {/* 🔁 Background Video */}
       <div className="absolute inset-0 z-0">
         <motion.video
-          className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-40"
           style={{ opacity: video1Opacity }}
           src="/videos/bg1.mp4"
           autoPlay
@@ -77,43 +87,30 @@ export const HeroSection = ({
           muted
           playsInline
         />
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/30 to-pink-300/20 mix-blend-multiply backdrop-blur-sm" />
       </div>
 
-      {/* Foreground Content */}
+      {/* 🌟 Content */}
       <div className="relative z-10">
         <Header />
         <motion.div
           style={{ rotateX, rotateZ, translateY, opacity }}
           className="space-y-10 px-4"
         >
-          <motion.div className="flex flex-wrap justify-center gap-6 mb-12">
-            {firstRow.map((product) => (
-              <ProductCard
-                product={product}
-                translate={translateX}
-                key={product.title}
-              />
-            ))}
-          </motion.div>
-          <motion.div className="flex flex-wrap justify-center gap-6 mb-12">
-            {secondRow.map((product) => (
-              <ProductCard
-                product={product}
-                translate={translateXReverse}
-                key={product.title}
-              />
-            ))}
-          </motion.div>
-          <motion.div className="flex flex-wrap justify-center gap-6">
-            {thirdRow.map((product) => (
-              <ProductCard
-                product={product}
-                translate={translateX}
-                key={product.title}
-              />
-            ))}
-          </motion.div>
+          {[firstRow, secondRow, thirdRow].map((row, i) => (
+            <motion.div
+              key={i}
+              className="flex flex-wrap justify-center gap-6 mb-8 sm:mb-12"
+            >
+              {row.map((product) => (
+                <ProductCard
+                  key={product.title}
+                  product={product}
+                  translate={i % 2 === 0 ? translateX : translateXReverse}
+                />
+              ))}
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </div>
@@ -122,8 +119,8 @@ export const HeroSection = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-6xl relative mx-auto py-20 px-4 text-center sm:text-left">
-      <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold dark:text-white font-serif leading-tight">
+    <div className="max-w-6xl mx-auto py-20 px-4 text-center sm:text-left">
+      <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold dark:text-white font-serif leading-tight tracking-wide">
         EXPLORE THE FEATURES <br className="hidden sm:block" />
         DESIGNING AND EXECUTION
       </h1>
@@ -150,23 +147,20 @@ export const ProductCard = ({
   return (
     <motion.div
       style={{ x: translate }}
-      whileHover={{ y: -20 }}
-      className="group/product w-full sm:w-[20rem] md:w-[24rem] lg:w-[30rem] h-80 relative shrink-0"
+      whileHover={{ scale: 1.05, y: -10 }}
+      className="group/product relative w-full sm:w-[18rem] md:w-[22rem] lg:w-[26rem] h-72 sm:h-80 md:h-96 rounded-xl overflow-hidden transition-transform duration-300 shadow-xl hover:shadow-blue-300/50"
     >
-      <Link
-        href={product.link}
-        className="block group-hover/product:shadow-2xl relative w-full h-full"
-      >
+      <Link href={product.link} className="block w-full h-full">
         <Image
           src={product.thumbnail}
           alt={product.title}
           fill
-          className="object-cover object-left-top absolute inset-0 rounded-lg"
+          className="object-contain absolute inset-0 transition-transform duration-300"
           priority
         />
       </Link>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none rounded-lg" />
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white text-lg font-semibold">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover/product:opacity-100 transition-opacity duration-300 pointer-events-none" />
+      <h2 className="absolute bottom-4 left-4 text-white text-base font-semibold drop-shadow-xl group-hover/product:opacity-100 transition-opacity duration-300">
         {product.title}
       </h2>
     </motion.div>

@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import type { Variants } from 'framer-motion';
 
 const teamMembers = [
   {
@@ -22,8 +23,6 @@ const teamMembers = [
   },
 ];
 
-import type { Variants } from 'framer-motion';
-
 const cardVariants: Variants = {
   offscreen: {
     y: 100,
@@ -42,43 +41,49 @@ const cardVariants: Variants = {
 
 const TeamSection = () => {
   return (
-    <div className="relative overflow-hidden py-12 px-4 sm:px-6 font-serif">
-      {/* Animated Gradient Background */}
-      <div className="absolute inset-0 z-0 animate-gradient bg-gradient-to-br from-purple-600 via-pink-500 to-yellow-400 blur-3xl opacity-30 pointer-events-none" />
+    <div className="relative overflow-hidden py-20 px-6 sm:px-10 font-serif bg-gradient-to-br from-sky-100 via-blue-200 to-indigo-100 text-gray-900">
+      {/* 💠 Animated Blue Blob Background */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-[-30%] left-[-20%] w-[80vw] h-[80vw] bg-sky-300 rounded-full mix-blend-multiply filter blur-[100px] opacity-30 animate-blob" />
+        <div className="absolute bottom-[-25%] right-[-20%] w-[90vw] h-[90vw] bg-blue-400 rounded-full mix-blend-multiply filter blur-[100px] opacity-30 animate-blob animation-delay-2000" />
+        <div className="absolute top-[30%] left-[15%] w-[60vw] h-[60vw] bg-indigo-300 rounded-full mix-blend-multiply filter blur-[100px] opacity-30 animate-blob animation-delay-4000" />
+      </div>
 
-      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 drop-shadow-lg text-black dark:text-white">
-        OUR TEAM
-      </h2>
+      <div className="relative max-w-6xl mx-auto">
+        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16 tracking-wide drop-shadow-xl text-indigo-700">
+          OUR TEAM
+        </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {teamMembers.map((member, index) => (
-          <motion.div
-            key={index}
-            className="bg-white dark:bg-black rounded-2xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105 hover:shadow-indigo-500/50"
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={cardVariants}
-          >
-            <div className="relative h-64 sm:h-80 w-full">
-              <Image
-                src={member.image}
-                alt={member.name}
-                layout="fill"
-                objectFit="cover"
-                className="hover:scale-110 transition duration-500"
-              />
-            </div>
-            <div className="p-4 sm:p-6 text-center text-gray-900 dark:text-white">
-              <p className="text-xs sm:text-sm font-semibold text-indigo-600 mb-1 uppercase tracking-wide">
-                {member.title}
-              </p>
-              <h3 className="text-sm sm:text-lg font-bold leading-tight">
-                {member.name}
-              </h3>
-            </div>
-          </motion.div>
-        ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+          {teamMembers.map((member, index) => (
+            <motion.div
+              key={index}
+              className="bg-white/90 border border-white/20 backdrop-blur-md rounded-2xl overflow-hidden shadow-xl transform transition duration-500 hover:scale-105 hover:shadow-blue-400/40"
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.5 }}
+              variants={cardVariants}
+            >
+              <div className="relative h-64 sm:h-80 w-full overflow-hidden">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+              <div className="p-5 text-center">
+                <p className="text-xs sm:text-sm font-semibold text-blue-600 mb-1 uppercase tracking-wide">
+                  {member.title}
+                </p>
+                <h3 className="text-base sm:text-lg font-bold leading-tight text-indigo-800">
+                  {member.name}
+                </h3>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );

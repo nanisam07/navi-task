@@ -110,10 +110,10 @@ export default function About() {
           <h2 className="text-3xl font-bold text-center mb-6">OUR VALUES</h2>
           <div className="grid md:grid-cols-4 gap-4 text-center text-sm">
             {[
-              { icon: '📐', title: 'Integrity', desc: 'Meticulous design & execution ensuring structural safety.' },
-              { icon: '🔧', title: 'Excellence', desc: 'Commitment to superior design and structural performance.' },
-              { icon: '📅', title: 'Collaboration', desc: 'Partnerships for seamless design & execution workflows.' },
-              { icon: '🚀', title: 'Innovation', desc: 'Creative approaches to post-tensioning for new heights.' }
+              { icon: '🧱', title: 'Integrity', desc: 'Meticulous design & execution ensuring structural safety.' },
+  { icon: '🏗️', title: 'Excellence', desc: 'Commitment to superior design and structural performance.' },
+  { icon: '🤝', title: 'Collaboration', desc: 'Partnerships for seamless design & execution workflows.' },
+  { icon: '💡', title: 'Innovation', desc: 'Creative approaches to post-tensioning for new heights.' }
             ].map((value, idx) => (
               <div key={idx}>
                 <div className="text-3xl mb-2">{value.icon}</div>
