@@ -8,7 +8,7 @@ import NavbarMenu from '@/components/ui/Navbar';
 
 
 // Dynamically import Lottie to avoid hydration errors
-const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+
 
 const processSteps = [
   {
