@@ -6,37 +6,34 @@ import { motion } from 'framer-motion';
 import Footer from '@/components/Footer';
 import NavbarMenu from '@/components/ui/Navbar';
 
+
 // Dynamically import Lottie to avoid hydration errors
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 const processSteps = [
   {
     title: 'Planning',
-    description:
-      'Optimizing structural integrity and efficiency through expert post-tensioning planning and execution.',
+    description: 'Optimizing structural integrity and efficiency...',
     image: '/images/process/P1.jpg',
-    animation: require('@/lottie/process/planning.json'),
+    
   },
   {
     title: 'Competitive',
-    description:
-      'Staying ahead of industry standards with innovative post-tensioning techniques and practices.',
+    description: 'Staying ahead of industry standards...',
     image: '/images/process/P2.jpg',
-    animation: require('@/lottie/process/competitive.json'),
+    
   },
   {
     title: 'Analysis',
-    description:
-      'Conducting thorough analysis to optimize post-tensioning solutions for structural efficiency.',
+    description: 'Conducting thorough analysis...',
     image: '/images/process/P3.png',
-    animation: require('@/lottie/process/analysis.json'),
+    
   },
   {
     title: 'Execution',
-    description:
-      'Implementing precision and expertise in post-tensioning execution for superior structural performance.',
+    description: 'Implementing precision and expertise...',
     image: '/images/process/P4.jpg',
-    animation: require('@/lottie/process/execution.json'),
+    
   },
 ];
 
@@ -81,15 +78,7 @@ export default function ProcessSection() {
                 />
               </div>
 
-              {/* Lottie animation */}
-              <div className="flex justify-center items-center py-4 bg-white">
-                <Lottie
-                  animationData={step.animation}
-                  loop
-                  autoplay
-                  className="h-32 w-32"
-                />
-              </div>
+              
 
               {/* Text Content */}
               <div className="p-6 text-center">
