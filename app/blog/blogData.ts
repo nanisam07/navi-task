@@ -83,7 +83,7 @@ Post-tensioning is not just a construction technique; it is a game-changer in mo
     slug: 'blog-4',
     title: 'Blog 4',
     summary: 'Post-Tensioning in High-Rise Buildings: A Game Changer for Urban Architecture...',
-    image: '/images/blogs/blog2.jpg',
+    image: '/images/blogs/blog4.jpg',
     content: `From Roads to Flyovers: How Advanced Engineering Strengthens Our Infrastructure
 Introduction
 Infrastructure is the backbone of any nation’s development, providing the foundation for economic growth and societal progress. Over the years, engineering advancements have revolutionized how we design and construct roads, bridges, and flyovers, ensuring better connectivity and efficiency. The evolution from simple dirt roads to complex, multi-tier flyovers showcases human ingenuity and technological prowess. In this blog, we explore how advanced engineering is shaping modern infrastructure, making transportation safer, faster, and more sustainable.
@@ -107,7 +107,7 @@ From ancient roads to modern flyovers, engineering has continuously evolved to m
     slug: 'blog-5',
     title: 'Blog 5',
     summary: 'The Role of Post-Tensioning in Sustainable Construction Practices...',
-    image: '/images/blogs/blog3.jpg',
+    image: '/images/blogs/blog5.jpg',
     content: ` Post-Tension Slabs vs. Conventional Slabs: Which One is Right for Your Project?
 Introduction
 When it comes to construction, the choice of slab type plays a crucial role in the durability, cost-effectiveness, and efficiency of a project. Two common options are post-tension slabs and conventional slabs. While both serve the same fundamental purpose, they differ in structural performance, material requirements, and application. Choosing the right one depends on factors such as project size, budget, and intended use. In this blog, we’ll explore the differences between post-tension slabs and conventional slabs to help you determine the best option for your construction needs.
@@ -131,7 +131,7 @@ Both post-tension and conventional slabs have their place in construction, and c
     slug: 'blog-6',
     title: 'Blog 6',
     summary: 'The Advantages of Post-Tensioning in Large-Scale Construction Projects...',
-    image: '/images/blogs/blog4.jpg',
+    image: '/images/blogs/blog6.jpg',
     content: `The Hidden Strength: Why Post-Tensioning is Essential for Earthquake-Resistant Structures
 Introduction
 Earthquakes pose a significant threat to buildings, bridges, and other infrastructures, making seismic resistance a crucial factor in construction. While engineers use various methods to reinforce structures, one of the most effective yet often overlooked techniques is post-tensioning. This advanced engineering solution enhances the durability and flexibility of buildings, allowing them to withstand the powerful forces of seismic activity. But what makes post-tensioning so essential for earthquake-resistant structures? Let’s explore its hidden strength and impact.
@@ -155,7 +155,7 @@ Post-tensioning is a game-changer in earthquake-resistant construction. By enhan
     slug : 'blog-7',
     title: 'Blog 7',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    Images: '/images/blogs/blog5.jpg',
+    Images: '/images/blogs/blog7.jpg',
     content: `The Hidden Strength: Why Post-Tensioning is Essential for Earthquake-Resistant Structures
 Introduction
 Earthquakes pose a significant threat to buildings, bridges, and other infrastructures, making seismic resistance a crucial factor in construction. While engineers use various methods to reinforce structures, one of the most effective yet often overlooked techniques is post-tensioning. This advanced engineering solution enhances the durability and flexibility of buildings, allowing them to withstand the powerful forces of seismic activity. But what makes post-tensioning so essential for earthquake-resistant structures? Let’s explore its hidden strength and impact.
@@ -179,7 +179,7 @@ Post-tensioning is a game-changer in earthquake-resistant construction. By enhan
     slug : 'blog-8',
     title: 'Blog 8',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    Images: '/images/blogs/blog5.jpg',
+    Images: '/images/blogs/blog8.jpg',
     content: `Redefining Urban Living with Navni Post-Tensioning Systems: My Home 99 & My Home Grava
 Introduction
 The skyline of modern cities is evolving, with high-rise buildings transforming the way we live. As urban spaces become more sophisticated, the demand for structurally sound, aesthetically appealing, and efficiently designed residential projects is on the rise. My Home 99 and My Home Grava are two such prestigious developments that reflect this shift in contemporary living. These towering marvels not only redefine luxury but also showcase cutting-edge engineering, made possible by Navni Post-Tensioning Systems, a leader in structural innovation.
@@ -211,7 +211,7 @@ As cities continue to expand vertically, the importance of advanced construction
     slug: 'blog-9',
     title: 'Blog 9',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    image: '/images/blogs/blog6.jpg',
+    image: '/images/blogs/blog9.jpg',
     content: `Enhancing Structural Strength in Arial Nytview with Navni Post-Tensioning Systems
 Introduction
 In an era where innovation drives the construction industry, the demand for strength, durability, and efficiency in structures has never been higher. One of the most promising advancements in this space is post-tensioning technology—an engineering solution that strengthens concrete by applying high-strength steel strands under tension. At the forefront of this innovation is Navni Post-Tensioning Systems, a trusted leader in delivering customized, reliable post-tensioning services across India. Their latest project in Arial Nytview stands as a testament to their expertise and commitment to excellence.
@@ -235,7 +235,7 @@ The success of Arial Nytview is a shining example of how engineering innovation,
     slug: 'blog-10',
     title: 'Blog 10',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    image: '/images/blogs/blog7.jpg',
+    image: '/images/blogs/blog10.jpg',
     content: `Elevating Kondapur’s Business Hub: The Strength of Navni Post-Tensioning
 Introduction
 Kondapur, one of Hyderabad’s most dynamic commercial districts, is experiencing a remarkable transformation. Once a quiet suburb, it has now become a bustling hub of business, innovation, and infrastructure development. In this landscape of growth and architectural advancement, Navni Post-Tensioning Systems Pvt. Ltd. stands as a pillar of strength, providing cutting-edge structural solutions that are shaping the future skyline of Kondapur. Their expertise in post-tensioning technology is not only elevating concrete structures but also elevating the region’s potential for sustainable, long-lasting development.
@@ -259,7 +259,7 @@ Navni Post-Tensioning Systems Pvt. Ltd. is more than a construction technology c
     slug: 'blog-11',
     title: 'Blog 11',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    image: '/images/blogs/blog8.jpg',
+    image: '/images/blogs/blog11.jpg',
     content: `Building Stronger Commercial Spaces: Navni’s Impact on Hyderabad’s Attapur Project
 Introduction
 In the heart of Hyderabad, where infrastructure development continues to thrive, the bustling neighborhood of Attapur is experiencing a transformation. At the core of this change is Navni Post Tensioning Systems Pvt. Ltd., a leading force in the realm of structural engineering and post-tensioning solutions. With their unmatched expertise and innovative techniques, Navni has brought a new dimension to commercial space construction, enhancing not just the strength but also the utility and aesthetics of commercial buildings in the region.
@@ -283,7 +283,7 @@ The transformation unfolding in Attapur stands as a powerful reminder of what’
     slug: 'blog-12',
     title: 'Blog 12',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    image: '/images/blogs/blog9.jpg',
+    image: '/images/blogs/blog12.jpg',
     content: `Risinia Scintilla: Strengthening High-Rise Living with Navni Post-Tensioning
 Introduction: As urban landscapes evolve and city skylines soar, the demand for resilient and innovative construction methods continues to grow. Risinia Scintilla, a premier residential high-rise, stands tall as a symbol of strength, sustainability, and innovation. Behind its robust framework lies the expertise of Navni Post-Tensioning Systems Pvt. Ltd., a name synonymous with cutting-edge engineering solutions. This collaboration is redefining how high-rise structures are built, ensuring safety, longevity, and design flexibility in modern living.
 The Vision Behind Risinia Scintilla: Risinia Scintilla was envisioned as a modern residential haven offering luxury, comfort, and architectural brilliance. Situated in a rapidly developing urban hub, the project required a construction partner who could blend strength with elegance. Navni Post-Tensioning emerged as the ideal choice, bringing years of expertise in structural reinforcement to meet the ambitious goals of the project. The result? A residential marvel that promises safety and style for generations.
@@ -300,7 +300,7 @@ Conclusion: Risinia Scintilla, with the strength of Navni Post-Tensioning at its
     slug: 'blog-13',
     title: 'Blog 13',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    image: '/images/blogs/blog10.jpg',
+    image: '/images/blogs/blog13.jpg',
     content: `Preserving Tradition with Modern Strength: Vinodha Nilayam & Navni Systems
 Introduction
 In a world that’s rapidly modernizing, the beauty of tradition often finds itself at a crossroads with the demands of innovation. However, when heritage meets engineering brilliance, something timeless is born. This synergy is perfectly exemplified in the architectural gem Vinodha Nilayam, preserved and protected with the advanced engineering solutions of Navni Systems. This partnership is a celebration of culture, sustainability, and smart construction.
@@ -324,7 +324,7 @@ The story of Vinodha Nilayam and Navni Systems is a powerful reminder that true 
     slug: 'blog-14',
     title: 'Blog 14',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    image: '/images/blogs/blog11.jpg',
+    image: '/images/blogs/blog14.jpg',
     content: `The Future of Office Buildings with Navni Post-Tensioning Systems
 Introduction
 The world of commercial real estate is evolving rapidly, and at the center of this transformation lies the need for smarter, stronger, and more sustainable infrastructure. Office buildings, once characterized by rigid design limitations, are now being reimagined to suit the dynamic demands of the modern workforce. Enter Navni Post-Tensioning Systems — a game-changer in construction technology that is reshaping the future of office spaces. With innovative engineering solutions, Navni is laying the foundation for more adaptable, efficient, and resilient buildings.
@@ -348,7 +348,7 @@ In an era where change is the only constant, Navni Post-Tensioning Systems are r
     slug: 'blog-15',
     title: 'Blog 15',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    image: '/images/blogs/blog12.jpg',
+    image: '/images/blogs/blog15.jpg',
     content: `Revolutionizing Retail Construction: Navni’s Role in Eluru’s Shopping Mall
 Introduction
 The face of retail is evolving rapidly, and at the heart of this transformation is a new wave of commercial construction that prioritizes innovation, sustainability, and user experience. Eluru, a bustling city in Andhra Pradesh, is now witnessing this retail renaissance with the construction of a groundbreaking shopping mall. Spearheading this ambitious project is Navni Post Tensioning Systems Pvt. Ltd., a name synonymous with structural excellence and engineering brilliance. This mall is not just another retail hub—it’s a symbol of Eluru’s progress and Navni’s unwavering commitment to redefining modern construction.
@@ -372,7 +372,7 @@ The upcoming shopping mall in Eluru stands as a powerful example of how visionar
     slug: 'blog-16',
     title: 'Blog 16',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    image: '/images/blogs/blog13.jpg',
+    image: '/images/blogs/blog16.jpg',
     content: `Hyderabad’s Commercial Future: Navni’s Impact on Large-Scale Business Hubs
 Introduction
 Hyderabad, the City of Pearls, has evolved into one of India’s most dynamic commercial powerhouses. With its thriving IT corridor, strategic location, and business-friendly policies, the city is attracting national and international corporations at an unprecedented rate. Among the key contributors to this rapid transformation is Navni Post Tensioning Systems Pvt. Ltd. – a visionary company shaping the skyline of Hyderabad by empowering the development of large-scale business hubs with cutting-edge structural engineering solutions.
@@ -396,7 +396,7 @@ Navni’s impact on Hyderabad’s commercial landscape goes far beyond bricks an
     slug: 'blog-17',
     title: 'Blog 17',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    image: '/images/blogs/blog14.jpg',
+    image: '/images/blogs/blog17.jpg',
     content: `Luxury & Longevity: How Navni Strengthens Krishna Reddy’s Farmhouse
 Introduction: Where Dreams Meet Durability
 In the lush expanse of Andhra Pradesh, Krishna Reddy envisioned a farmhouse that would not only reflect opulence but also stand the test of time. While the dream was vivid, the challenge lay in turning it into a structurally sound reality. That’s when Navni Post Tensioning Systems stepped in—not just as a service provider but as a partner in engineering brilliance. Their expertise laid the foundation for a blend of modern luxury and enduring strength.
@@ -420,7 +420,7 @@ Krishna Reddy’s farmhouse is a testament to what happens when visionary design
     slug: 'blog-18',
     title: 'Blog 18',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    image: '/images/blogs/blog15.jpg',
+    image: '/images/blogs/blog18.jpg',
     content: `Enhancing Commercial Strength: Navni’s Role in Rohdhan’s Architectural Success
 Introduction: Building Beyond Structures
 In the world of construction and architectural innovation, success doesn’t just rest on steel and concrete—it’s built on systems, synergy, and support. As modern projects grow more complex and ambitious, the role of post-tensioning solutions becomes central to efficiency, sustainability, and strength. In this evolving landscape, Navni Post Tensioning Systems Pvt. Ltd. emerges as a silent force behind some of the most robust structures, including the architectural marvel that is Rohdhan Commercial Complex. Their technical expertise and precision have not only enhanced the project’s structural integrity but also redefined possibilities in commercial real estate development.
@@ -444,7 +444,7 @@ At the core of every iconic structure lies a trusted partnership. Navni’s role
     slug: 'blog-19',
     title: 'Blog 19',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    image: '/images/blogs/blog16.jpg',
+    image: '/images/blogs/blog19.jpg',
     content: `Engineering Excellence: Kondapur’s 360 Life Tower - 2 with Navni Post-Tensioning
 Introduction
 In the heart of Kondapur, a symbol of modern engineering and architectural brilliance rises – the 360 Life Tower - 2. This iconic structure isn’t just a reflection of luxury living, but a testament to innovation in construction. At the core of this development’s success lies Navni Post-Tensioning Systems Pvt. Ltd., a pioneering force in structural post-tensioning solutions. Together, they are reshaping Hyderabad’s skyline, delivering not just homes but enduring engineering masterpieces.
@@ -468,7 +468,7 @@ Conclusion
     slug: 'blog-20',
     title: 'Blog 20',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    image: '/images/blogs/blog17.jpg',
+    image: '/images/blogs/blog20.jpg',
     content: `Revolutionizing Residential Strength: Oxygen Homes & Navni Post-Tensioning
 
 Introduction
