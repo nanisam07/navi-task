@@ -44,7 +44,7 @@ When comparing post-tensioning to traditional reinforcement, the decision ultima
     title: 'The Future of Construction: How Post-Tensioning is Reshaping Skylines',
     summary:
       'Post-tensioning is transforming the way modern skylines are built, offering durability, efficiency, and sustainable design. Explore how it’s shaping the future...',
-    image: '/images/blogs/blog1.jpg',
+    image: '/images/blogs/blog3.jpg',
     content: `
 Introduction
 
