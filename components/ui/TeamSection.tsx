@@ -5,7 +5,13 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import type { Variants } from 'framer-motion';
 
-const teamMembers = [
+type TeamMember = {
+  name: string;
+  title: string;
+  image: string;
+};
+
+const teamMembers: TeamMember[] = [
   {
     name: 'VIISHHNUVARDHANSUNKARI, B.E (CIVIL)',
     title: 'FOUNDER & MANAGING DIRECTOR',
@@ -45,7 +51,7 @@ export default function TeamSection() {
       {/* 🌌 Gradient Background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#141E30] via-[#243B55] to-[#0F2027]" />
 
-      {/* 🔮 Moving Blur Background Blobs */}
+      {/* 🔮 Blurry Moving Background Circles */}
       <motion.div
         className="absolute top-[-30%] left-[-20%] w-[80vw] h-[80vw] bg-purple-500 rounded-full mix-blend-multiply filter blur-[120px] opacity-20"
         animate={{ x: [0, 30, -20, 0], y: [0, -30, 10, 0] }}
@@ -67,14 +73,9 @@ export default function TeamSection() {
           OUR TEAM
         </motion.h2>
 
-        {/* 🔄 Animated Card Stack */}
         <div className="flex flex-col sm:flex-row sm:justify-center sm:flex-wrap gap-14 sm:gap-10 items-center">
           {teamMembers.map((member, index) => (
-            <AnimatedCard
-              key={index}
-              member={member}
-              delay={index * 0.2}
-            />
+            <AnimatedCard key={index} member={member} delay={index * 0.2} />
           ))}
         </div>
       </div>
@@ -82,7 +83,13 @@ export default function TeamSection() {
   );
 }
 
-function AnimatedCard({ member, delay }: { member: any; delay: number }) {
+function AnimatedCard({
+  member,
+  delay,
+}: {
+  member: TeamMember;
+  delay: number;
+}) {
   const [transform, setTransform] = useState('rotateX(0deg) rotateY(0deg)');
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -118,9 +125,8 @@ function AnimatedCard({ member, delay }: { member: any; delay: number }) {
         <Image
           src={member.image}
           alt={member.name}
-          layout="fill"
-          objectFit="cover"
-          className="transition-transform duration-500 hover:scale-105"
+          fill
+          className="object-cover transition-transform duration-500 hover:scale-105"
         />
       </div>
       <div className="p-6 text-center">

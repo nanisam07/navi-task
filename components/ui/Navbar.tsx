@@ -6,6 +6,7 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 
+// 🧩 Left & Right Menus
 const leftMenu = [
   { label: 'HOME', href: '/' },
   { label: 'ABOUT US', href: '/about' },
@@ -21,21 +22,24 @@ const rightMenu = [
   { label: 'BLOG', href: '/blog' },
 ];
 
-const blogPosts = Array.from({ length: 14 }, (_, i) => ({
+// ✅ BlogPost type
+type BlogPost = {
+  slug: string;
+  title: string;
+};
+
+// 🧠 Blog Posts Dummy Data
+const blogPosts: BlogPost[] = Array.from({ length: 14 }, (_, i) => ({
   slug: `blog-${i + 1}`,
   title: `Blog ${i + 1}`,
 }));
 
+// 🚀 Main Navbar
 export const NavbarMenu = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showBlogDropdown, setShowBlogDropdown] = useState(false);
   const dropdownRef = useRef(null);
   const router = useRouter();
-
-  interface BlogPost {
-    slug: string;
-    title: string;
-  }
 
   const handleBlogClick = (slug: string): void => {
     setShowBlogDropdown(false);
