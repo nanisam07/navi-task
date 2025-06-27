@@ -6,7 +6,7 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 
-// 🧩 Left & Right Menus
+// Left & Right Menus
 const leftMenu = [
   { label: 'HOME', href: '/' },
   { label: 'ABOUT US', href: '/about' },
@@ -22,26 +22,23 @@ const rightMenu = [
   { label: 'BLOG', href: '/blog' },
 ];
 
-// ✅ BlogPost type
 type BlogPost = {
   slug: string;
   title: string;
 };
 
-// 🧠 Blog Posts Dummy Data
 const blogPosts: BlogPost[] = Array.from({ length: 14 }, (_, i) => ({
   slug: `blog-${i + 1}`,
   title: `Blog ${i + 1}`,
 }));
 
-// 🚀 Main Navbar
 export const NavbarMenu = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showBlogDropdown, setShowBlogDropdown] = useState(false);
   const dropdownRef = useRef(null);
   const router = useRouter();
 
-  const handleBlogClick = (slug: string): void => {
+  const handleBlogClick = (slug: string) => {
     setShowBlogDropdown(false);
     router.push(`/blog/${slug}`);
   };
@@ -64,7 +61,7 @@ export const NavbarMenu = () => {
           ))}
         </div>
 
-        {/* LOGO CENTERED */}
+        {/* LOGO */}
         <div className="mx-4">
           <Link href="/">
             <Image
@@ -86,45 +83,56 @@ export const NavbarMenu = () => {
               onMouseLeave={() => label === 'BLOG' && setShowBlogDropdown(false)}
               className="relative"
             >
-              <motion.p
-                whileHover={{ scale: 1.05, color: '#3b82f6' }}
-                transition={{ duration: 0.2 }}
-                className="cursor-pointer text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-400"
-              >
-                {label}
-              </motion.p>
-
-              {label === 'BLOG' && (
-                <AnimatePresence>
-                  {showBlogDropdown && (
-                    <motion.ul
-                      ref={dropdownRef}
-                      onMouseEnter={() => setShowBlogDropdown(true)}
-                      onMouseLeave={() => setShowBlogDropdown(false)}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full mt-2 bg-white shadow-xl border border-gray-100 dark:bg-black dark:border-gray-800 rounded-md w-64 z-50"
-                    >
-                      {blogPosts.map((post) => (
-                        <motion.li
-                          key={post.slug}
-                          whileHover={{ scale: 1.02, x: 5 }}
-                          className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm text-gray-800 dark:text-gray-200 cursor-pointer"
-                          onClick={() => handleBlogClick(post.slug)}
-                        >
-                          {post.title}
-                        </motion.li>
-                      ))}
-                    </motion.ul>
-                  )}
-                </AnimatePresence>
+              {label !== 'BLOG' ? (
+                <Link href={href}>
+                  <motion.p
+                    whileHover={{ scale: 1.05, color: '#3b82f6' }}
+                    transition={{ duration: 0.2 }}
+                    className="cursor-pointer text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-400"
+                  >
+                    {label}
+                  </motion.p>
+                </Link>
+              ) : (
+                <>
+                  <motion.p
+                    whileHover={{ scale: 1.05, color: '#3b82f6' }}
+                    transition={{ duration: 0.2 }}
+                    className="cursor-pointer text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-400"
+                  >
+                    {label}
+                  </motion.p>
+                  <AnimatePresence>
+                    {showBlogDropdown && (
+                      <motion.ul
+                        ref={dropdownRef}
+                        onMouseEnter={() => setShowBlogDropdown(true)}
+                        onMouseLeave={() => setShowBlogDropdown(false)}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        className="absolute top-full mt-2 bg-white shadow-xl border border-gray-100 dark:bg-black dark:border-gray-800 rounded-md w-64 z-50"
+                      >
+                        {blogPosts.map((post) => (
+                          <motion.li
+                            key={post.slug}
+                            whileHover={{ scale: 1.02, x: 5 }}
+                            className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm text-gray-800 dark:text-gray-200 cursor-pointer"
+                            onClick={() => handleBlogClick(post.slug)}
+                          >
+                            {post.title}
+                          </motion.li>
+                        ))}
+                      </motion.ul>
+                    )}
+                  </AnimatePresence>
+                </>
               )}
             </div>
           ))}
         </div>
 
-        {/* MOBILE BUTTON */}
+        {/* MOBILE MENU BUTTON */}
         <div className="lg:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
