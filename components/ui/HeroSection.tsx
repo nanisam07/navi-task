@@ -159,10 +159,10 @@ export const ProductCard = ({
           priority
         />
       </Link>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover/product:opacity-100 transition-opacity duration-300 pointer-events-none" />
+      {/*<div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover/product:opacity-100 transition-opacity duration-300 pointer-events-none" />
       <h2 className="absolute bottom-4 left-4 text-white text-base font-semibold drop-shadow-xl group-hover/product:opacity-100 transition-opacity duration-300">
         {product.title}
-      </h2>
+      </h2>*/}
     </motion.div>
   );
 };
