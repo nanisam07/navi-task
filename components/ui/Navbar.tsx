@@ -2,9 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useRouter } from 'next/navigation';
 
 // Left & Right Menus
 const leftMenu = [
@@ -22,26 +21,8 @@ const rightMenu = [
   { label: 'BLOG', href: '/blog' },
 ];
 
-type BlogPost = {
-  slug: string;
-  title: string;
-};
-
-const blogPosts: BlogPost[] = Array.from({ length: 14 }, (_, i) => ({
-  slug: `blog-${i + 1}`,
-  title: `Blog ${i + 1}`,
-}));
-
 export const NavbarMenu = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [showBlogDropdown, setShowBlogDropdown] = useState(false);
-  const dropdownRef = useRef(null);
-  const router = useRouter();
-
-  const handleBlogClick = (slug: string) => {
-    setShowBlogDropdown(false);
-    router.push(`/blog/${slug}`);
-  };
 
   return (
     <nav className="relative z-50 mx-4 my-6 rounded-3xl px-6 py-4 shadow-2xl bg-white/80 dark:bg-black/70 backdrop-blur-md border border-gray-200 dark:border-white/10 font-serif">
@@ -50,13 +31,9 @@ export const NavbarMenu = () => {
         <div className="hidden lg:flex items-center gap-6">
           {leftMenu.map(({ label, href }) => (
             <Link key={label} href={href}>
-              <motion.p
-                whileHover={{ scale: 1.05, color: '#3b82f6' }}
-                transition={{ duration: 0.2 }}
-                className="cursor-pointer text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-400"
-              >
+              <p className="cursor-pointer text-black dark:text-white">
                 {label}
-              </motion.p>
+              </p>
             </Link>
           ))}
         </div>
@@ -67,8 +44,8 @@ export const NavbarMenu = () => {
             <Image
               src="/images/logo.png"
               alt="Logo"
-              width={80}
-              height={80}
+              width={120}
+              height={120}
               className="hover:scale-110 transition-transform duration-300"
             />
           </Link>
@@ -77,58 +54,11 @@ export const NavbarMenu = () => {
         {/* RIGHT MENU */}
         <div className="hidden lg:flex items-center gap-6">
           {rightMenu.map(({ label, href }) => (
-            <div
-              key={label}
-              onMouseEnter={() => label === 'BLOG' && setShowBlogDropdown(true)}
-              onMouseLeave={() => label === 'BLOG' && setShowBlogDropdown(false)}
-              className="relative"
-            >
-              {label !== 'BLOG' ? (
-                <Link href={href}>
-                  <motion.p
-                    whileHover={{ scale: 1.05, color: '#3b82f6' }}
-                    transition={{ duration: 0.2 }}
-                    className="cursor-pointer text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-400"
-                  >
-                    {label}
-                  </motion.p>
-                </Link>
-              ) : (
-                <>
-                  <motion.p
-                    whileHover={{ scale: 1.05, color: '#3b82f6' }}
-                    transition={{ duration: 0.2 }}
-                    className="cursor-pointer text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-400"
-                  >
-                    {label}
-                  </motion.p>
-                  <AnimatePresence>
-                    {showBlogDropdown && (
-                      <motion.ul
-                        ref={dropdownRef}
-                        onMouseEnter={() => setShowBlogDropdown(true)}
-                        onMouseLeave={() => setShowBlogDropdown(false)}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        className="absolute top-full mt-2 bg-white shadow-xl border border-gray-100 dark:bg-black dark:border-gray-800 rounded-md w-64 z-50"
-                      >
-                        {blogPosts.map((post) => (
-                          <motion.li
-                            key={post.slug}
-                            whileHover={{ scale: 1.02, x: 5 }}
-                            className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm text-gray-800 dark:text-gray-200 cursor-pointer"
-                            onClick={() => handleBlogClick(post.slug)}
-                          >
-                            {post.title}
-                          </motion.li>
-                        ))}
-                      </motion.ul>
-                    )}
-                  </AnimatePresence>
-                </>
-              )}
-            </div>
+            <Link key={label} href={href}>
+              <p className="cursor-pointer text-black dark:text-white">
+                {label}
+              </p>
+            </Link>
           ))}
         </div>
 
@@ -160,7 +90,7 @@ export const NavbarMenu = () => {
           >
             {[...leftMenu, ...rightMenu].map(({ label, href }) => (
               <Link key={label} href={href} onClick={() => setIsMobileMenuOpen(false)}>
-                <p className="text-sm text-black dark:text-white hover:text-blue-500 dark:hover:text-blue-400">
+                <p className="text-sm text-black dark:text-white">
                   {label}
                 </p>
               </Link>

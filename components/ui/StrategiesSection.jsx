@@ -33,7 +33,7 @@ const strategies = [
 ];
 
 export default function StrategiesSection() {
-  const [activeIndex, setActiveIndex] = useState(-1); // ✅ JS-safe
+  const [activeIndex, setActiveIndex] = useState(-1);
 
   const toggleIndex = (index) => {
     setActiveIndex(index === activeIndex ? -1 : index);
@@ -47,12 +47,12 @@ export default function StrategiesSection() {
       viewport={{ once: true }}
       className="relative overflow-hidden py-24 px-6 sm:px-10 font-serif text-white"
     >
-      {/* 🌌 Elegant Animated Background */}
+      {/* 🌈 Gradient Background Inspired by Logo */}
       <motion.div
         className="absolute inset-0 z-0"
         style={{
           background:
-            'linear-gradient(135deg, #2b0057 0%, #3f0d68 50%, #23062b 100%)',
+            'linear-gradient(135deg, #e91e63 0%, #2196f3 50%, #0d47a1 100%)',
         }}
       />
       <motion.div
@@ -75,7 +75,6 @@ export default function StrategiesSection() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -88,9 +87,7 @@ export default function StrategiesSection() {
           STRATEGIES
         </motion.h2>
 
-        {/* Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-          {/* Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -106,7 +103,6 @@ export default function StrategiesSection() {
             />
           </motion.div>
 
-          {/* Strategy Cards */}
           <div className="space-y-6 w-full">
             {strategies.map((item, index) => (
               <motion.div

@@ -47,28 +47,21 @@ const cardVariants: Variants = {
 
 export default function TeamSection() {
   return (
-    <div className="relative overflow-hidden py-24 px-6 sm:px-10 font-serif text-white">
-      {/* 🌌 Gradient Background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#141E30] via-[#243B55] to-[#0F2027]" />
-
-      {/* 🔮 Blurry Moving Background Circles */}
-      <motion.div
-        className="absolute top-[-30%] left-[-20%] w-[80vw] h-[80vw] bg-purple-500 rounded-full mix-blend-multiply filter blur-[120px] opacity-20"
-        animate={{ x: [0, 30, -20, 0], y: [0, -30, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 25, ease: 'easeInOut' }}
-      />
-      <motion.div
-        className="absolute bottom-[-25%] right-[-20%] w-[90vw] h-[90vw] bg-pink-500 rounded-full mix-blend-multiply filter blur-[120px] opacity-20"
-        animate={{ x: [0, -30, 20, 0], y: [0, 30, -10, 0] }}
-        transition={{ repeat: Infinity, duration: 30, ease: 'easeInOut' }}
-      />
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+      className="relative overflow-hidden py-24 px-6 sm:px-10 font-serif text-white bg-gradient-to-br from-[#1861AC] via-[#6FC5FF] to-[#80D0FF]"
+    >
+      {/* Branded Gradient Background Based on Logo */}
 
       <div className="relative max-w-6xl mx-auto">
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-          className="text-4xl sm:text-5xl font-bold text-center mb-20 tracking-wide drop-shadow-lg text-violet-300"
+          className="text-4xl sm:text-5xl font-bold text-center mb-20 tracking-wide drop-shadow-lg text-white"
         >
           OUR TEAM
         </motion.h2>
@@ -79,7 +72,7 @@ export default function TeamSection() {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -119,7 +112,7 @@ function AnimatedCard({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ transform }}
-      className="w-[90%] sm:w-[300px] bg-white/10 backdrop-blur-lg border border-white/10 rounded-3xl shadow-lg overflow-hidden transition-all duration-300 transform-gpu cursor-pointer hover:shadow-purple-400/30"
+      className="w-[90%] sm:w-[300px] bg-white/10 backdrop-blur-lg border border-white/10 rounded-3xl shadow-lg overflow-hidden transition-all duration-300 transform-gpu cursor-pointer hover:shadow-sky-400/30"
     >
       <div className="relative h-72 w-full overflow-hidden">
         <Image
@@ -130,7 +123,7 @@ function AnimatedCard({
         />
       </div>
       <div className="p-6 text-center">
-        <p className="text-xs sm:text-sm font-semibold text-purple-300 mb-1 uppercase tracking-wide">
+        <p className="text-xs sm:text-sm font-semibold text-white/80 mb-1 uppercase tracking-wide">
           {member.title}
         </p>
         <h3 className="text-base sm:text-lg font-bold text-white">
