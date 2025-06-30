@@ -155,7 +155,7 @@ Post-tensioning is a game-changer in earthquake-resistant construction. By enhan
     slug : 'blog-7',
     title: 'Blog 7',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    Images: '/images/blogs/blog7.jpg',
+    image: '/images/blogs/blog7.jpg',
     content: `The Hidden Strength: Why Post-Tensioning is Essential for Earthquake-Resistant Structures
 Introduction
 Earthquakes pose a significant threat to buildings, bridges, and other infrastructures, making seismic resistance a crucial factor in construction. While engineers use various methods to reinforce structures, one of the most effective yet often overlooked techniques is post-tensioning. This advanced engineering solution enhances the durability and flexibility of buildings, allowing them to withstand the powerful forces of seismic activity. But what makes post-tensioning so essential for earthquake-resistant structures? Let’s explore its hidden strength and impact.
@@ -179,7 +179,7 @@ Post-tensioning is a game-changer in earthquake-resistant construction. By enhan
     slug : 'blog-8',
     title: 'Blog 8',
     summary: 'Post-Tensioning in Bridges: Engineering Marvels for Modern Transportation...',
-    Images: '/images/blogs/blog8.jpg',
+    image: '/images/blogs/blog8.jpg',
     content: `Redefining Urban Living with Navni Post-Tensioning Systems: My Home 99 & My Home Grava
 Introduction
 The skyline of modern cities is evolving, with high-rise buildings transforming the way we live. As urban spaces become more sophisticated, the demand for structurally sound, aesthetically appealing, and efficiently designed residential projects is on the rise. My Home 99 and My Home Grava are two such prestigious developments that reflect this shift in contemporary living. These towering marvels not only redefine luxury but also showcase cutting-edge engineering, made possible by Navni Post-Tensioning Systems, a leader in structural innovation.
