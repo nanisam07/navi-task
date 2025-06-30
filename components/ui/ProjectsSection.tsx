@@ -83,10 +83,10 @@ export default function ProjectsSection() {
           <motion.a
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
-            href="/blog"
+            href="/projects"
             className="inline-block px-6 py-3 sm:px-8 sm:py-3 bg-pink-600 text-white rounded-full font-bold text-base sm:text-lg shadow-xl hover:bg-pink-700 transition"
           >
-            View All News →
+            View All Projects →
           </motion.a>
         </div>
       </div>
