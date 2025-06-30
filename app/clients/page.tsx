@@ -2,10 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import {
-  FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn,
-  FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock
-} from 'react-icons/fa';
 import NavbarMenu from '@/components/ui/Navbar';
 import ClientOnly from '@/components/ClientsOnly';
 import Footer from "@/components/Footer";
@@ -70,11 +66,11 @@ export default function OurClientsWithFooter() {
           </div>
         </section>
       </ClientOnly>
-{/* Footer */}
+
+      {/* Footer */}
       <div className="mt-24 w-full">
         <Footer />
       </div>
-      
     </>
   );
 }

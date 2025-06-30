@@ -5,6 +5,7 @@ import { blogPosts } from '../blogData';
 import { notFound } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { NavbarMenu } from "@/components/ui/Navbar";
 import Footer from "@/components/Footer";
 
@@ -17,25 +18,29 @@ export default function BlogPage(props: { params: Promise<{ slug: string }> }) {
   }
 
   return (
-
     <div className="bg-gradient-to-br from-purple-200 via-pink-100 to-blue-200 min-h-screen font-serif">
-     
-      
-<NavbarMenu />
+      <NavbarMenu />
 
       {/* 🔽 Main Blog Layout */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 pb-20 ">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 pb-20">
         {/* 📄 Blog Content */}
         <div className="lg:col-span-8 space-y-10">
-          <motion.img
-            src={blog.image}
-            alt={blog.title}
-            className="w-full max-h-[420px] object-cover rounded-2xl shadow-2xl"
+          <motion.div
+            className="w-full max-h-[420px] relative rounded-2xl overflow-hidden shadow-2xl"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-          />
+          >
+            <Image
+              src={blog.image}
+              alt={blog.title}
+              layout="fill"
+              objectFit="cover"
+              className="rounded-2xl"
+              priority
+            />
+          </motion.div>
 
           <motion.div
             className="prose prose-lg text-gray-800 leading-relaxed"
@@ -79,11 +84,14 @@ export default function BlogPage(props: { params: Promise<{ slug: string }> }) {
                     href={`/blog/${post.slug}`}
                     className="flex items-center gap-4 mb-4 group"
                   >
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-14 h-14 object-cover rounded-md shadow-sm"
-                    />
+                    <div className="relative w-14 h-14 rounded-md overflow-hidden shadow-sm">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                    </div>
                     <span className="text-sm text-gray-800 group-hover:text-purple-700 font-medium">
                       {post.title}
                     </span>
@@ -93,7 +101,7 @@ export default function BlogPage(props: { params: Promise<{ slug: string }> }) {
           </div>
         </div>
       </div>
-      <Footer  />
+      <Footer />
     </div>
   );
 }
