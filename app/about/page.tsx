@@ -105,7 +105,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="rounded-xl p-6 bg-orange-500 text-white shadow-lg"
+          className="rounded-xl p-6 bg-pink-600 text-white shadow-lg"
         >
           <h2 className="text-3xl font-bold text-center mb-6">OUR VALUES</h2>
           <div className="grid md:grid-cols-4 gap-4 text-center text-sm">
@@ -163,7 +163,7 @@ export default function About() {
                         initial={{ width: 0 }}
                         whileInView={{ width: `${item.value}%` }}
                         transition={{ duration: 1 }}
-                        className="h-2 bg-orange-500 rounded-full"
+                        className="h-2 bg-pink-600 rounded-full"
                       />
                     </div>
                   </div>

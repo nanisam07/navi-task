@@ -3,6 +3,7 @@
 import { MotionDiv, MotionH2 } from "@/components/MotionWrapper";
 import Image from "next/image";
 import NavbarMenu from "@/components/ui/Navbar";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const team = [
@@ -125,55 +126,12 @@ export default function Home() {
         </button>
       </MotionDiv>
 
-      {/* Footer */}
-      <MotionDiv
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-        className="relative z-10 bg-gradient-to-r from-purple-900 to-purple-700 text-white py-12 px-6 mt-24"
-      >
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-          <div>
-            <h4 className="font-bold text-lg mb-2">Build with NAVNI</h4>
-            <p className="text-sm leading-relaxed">
-              Navni Post Tensioning Systems Pvt. Ltd is a specialised
-              post-tensioning company with expertise in structural design and
-              execution, providing value-driven engineering since 2019.
-            </p>
-            <p className="mt-4 text-sm">
-              🕒 09:00 AM to 07:00 PM, Sunday - CLOSED
-            </p>
-          </div>
-          <div>
-            <h4 className="font-bold text-lg mb-2">Quick Links</h4>
-            <ul className="text-sm space-y-1">
-              <li>About Us</li>
-              <li>Services</li>
-              <li>Our Clients</li>
-              <li>Portfolio</li>
-              <li>Blogs</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold text-lg mb-2">Our Offices</h4>
-            <p className="text-sm">
-              Plot No.9,10, Manikonda, Hyderabad - 500089
-            </p>
-            <p className="text-sm mt-2">
-              435, OU Colony, Shaikpet, Hyderabad - 500089
-            </p>
-            <p className="text-sm mt-2">
-              📞 +91 9100945658 / +91 9697799299
-            </p>
-            <p className="text-sm mt-2">📧 info@navni.in</p>
-          </div>
-        </div>
-        <div className="text-center text-sm mt-8 border-t border-purple-600 pt-4">
-          © 2024 Navni Post Tensioning Systems Pvt. Ltd, All Rights Reserved
-        </div>
-      </MotionDiv>
+      
     </div>
+    {/* Footer */}
+      <div className="mt-24 w-full">
+        <Footer />
+      </div>
     </div>
   );
 }
