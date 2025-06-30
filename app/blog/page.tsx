@@ -21,7 +21,25 @@ export default function BlogPage() {
   return (
     <main className="relative w-full overflow-x-hidden text-white font-sans bg-gradient-to-br from-[#003e7e] via-[#0075c7] to-[#ee2b7a]">
       <NavbarMenu />
+{/* 🎨 Decorative Header */}
+      <div className="relative z-10 text-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white py-16 px-4 mb-12 font-serif">
+        <div className="absolute inset-0 bg-[url('/images/bg-texture.png')] opacity-10 bg-cover" />
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <motion.h1
+  className="text-4xl md:text-5xl font-extrabold mb-4"
+  initial={{ opacity: 0, y: -30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+>
+  Articles & Newsletter
+</motion.h1>
 
+          <p className="text-lg opacity-90">
+            Explore cutting-edge insights on post-tensioning systems and construction innovation.
+          </p>
+        </div>
+      </div>
       {/* Blog Section */}
       <section className="relative z-10 px-6 py-16">
         <motion.h1

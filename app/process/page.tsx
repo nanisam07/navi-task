@@ -92,7 +92,10 @@ export default function ProcessSection() {
             </motion.div>
           ))}
         </div>
+        {/* Footer */}
+      <div className="mt-24 w-full">
         <Footer />
+      </div>
       </section>
     </>
   );
