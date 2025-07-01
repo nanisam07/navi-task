@@ -63,6 +63,7 @@ export default function OurClientsWithFooter() {
                 />
               </motion.div>
             ))}
+            
           </div>
         </section>
       </ClientOnly>

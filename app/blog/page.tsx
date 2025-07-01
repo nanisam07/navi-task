@@ -21,35 +21,36 @@ export default function BlogPage() {
   return (
     <main className="relative w-full overflow-x-hidden text-white font-sans bg-gradient-to-br from-[#003e7e] via-[#0075c7] to-[#ee2b7a]">
       <NavbarMenu />
-{/* 🎨 Decorative Header */}
-      <div className="relative z-10 text-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white py-16 px-4 mb-12 font-serif">
+
+      {/* 🎨 Decorative Header */}
+      <div className="relative z-10 text-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white py-12 px-4 sm:py-16 sm:px-8 mb-12 font-serif">
         <div className="absolute inset-0 bg-[url('/images/bg-texture.png')] opacity-10 bg-cover" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <motion.h1
-  className="text-4xl md:text-5xl font-extrabold mb-4"
-  initial={{ opacity: 0, y: -30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: true }}
->
-  Articles & Newsletter
-</motion.h1>
-
-          <p className="text-lg opacity-90">
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4"
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            Articles & Newsletter
+          </motion.h1>
+          <p className="text-base sm:text-lg opacity-90">
             Explore cutting-edge insights on post-tensioning systems and construction innovation.
           </p>
         </div>
       </div>
-      {/* Blog Section */}
-      <section className="relative z-10 px-6 py-16">
-        <motion.h1
+
+      {/* 📰 Blog Section */}
+      <section className="relative z-10 px-4 sm:px-6 md:px-12 py-16">
+        <motion.h2
           initial={{ opacity: 0, y: -60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl font-extrabold text-center mb-12"
+          className="text-3xl sm:text-4xl font-extrabold text-center mb-12"
         >
           Explore Our Latest Blogs
-        </motion.h1>
+        </motion.h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           <AnimatePresence>
@@ -63,7 +64,7 @@ export default function BlogPage() {
                 className="bg-white/5 backdrop-blur-lg rounded-xl overflow-hidden shadow-2xl border border-white/10 transform transition-transform duration-300 hover:scale-105 hover:rotate-1 cursor-pointer group"
               >
                 <Link href={`/blog/${blog.slug}`}>
-                  <div className="relative h-48 w-full overflow-hidden">
+                  <div className="relative h-48 sm:h-60 w-full overflow-hidden">
                     <Image
                       src={blog.image ?? '/default-blog-image.jpg'}
                       alt={blog.title}
@@ -74,7 +75,7 @@ export default function BlogPage() {
                     />
                   </div>
                   <div className="p-4">
-                    <h2 className="text-xl font-bold mb-2 group-hover:text-pink-400 transition-colors duration-300">
+                    <h2 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-pink-400 transition-colors duration-300">
                       {blog.title}
                     </h2>
                     <p className="text-sm text-gray-100 group-hover:text-gray-200 transition-colors">
@@ -101,14 +102,14 @@ export default function BlogPage() {
         )}
       </section>
 
-      {/* Newsletter Section */}
-      <section className="relative z-10 mt-24 px-6 py-16 bg-gradient-to-r from-[#003e7e] to-[#0075c7] text-white">
+      {/* 📧 Newsletter Section */}
+      <section className="relative z-10 mt-24 px-4 sm:px-6 py-16 bg-gradient-to-r from-[#003e7e] to-[#0075c7] text-white">
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 50 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto text-center border border-white/10 p-10 rounded-2xl shadow-xl bg-white/10 backdrop-blur"
+          className="max-w-3xl mx-auto text-center border border-white/10 p-6 sm:p-10 rounded-2xl shadow-xl bg-white/10 backdrop-blur"
         >
           <div className="flex justify-center mb-4">
             <motion.div
@@ -118,8 +119,10 @@ export default function BlogPage() {
               <MailIcon className="h-8 w-8 text-white" />
             </motion.div>
           </div>
-          <h2 className="text-3xl font-bold mb-3 tracking-tight">Subscribe to Our Newsletter</h2>
-          <p className="text-gray-100 mb-6">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-3 tracking-tight">
+            Subscribe to Our Newsletter
+          </h3>
+          <p className="text-sm sm:text-base text-gray-100 mb-6">
             Stay in the loop! Get the latest blogs, updates, and offers directly to your inbox.
           </p>
           <form className="flex flex-col sm:flex-row items-center justify-center gap-4">
