@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Fade, Slide } from 'react-awesome-reveal';
 import NavbarMenu from '@/components/ui/Navbar';
+import Footer from "@/components/Footer";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -167,43 +168,11 @@ export default function ContactUs() {
           </div>
         </Fade>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-purple-900 text-white py-16 px-6 sm:px-12 lg:px-24">
-        <Fade cascade triggerOnce>
-          <div className="grid gap-12 md:grid-cols-3">
-            <div>
-              <h3 className="text-lg font-semibold mb-3">About NAVNI</h3>
-              <p className="text-sm leading-6">
-                Since 2019, Navni Post Tensioning Systems Pvt. Ltd has delivered
-                excellence in post-tensioning design and execution across India.
-              </p>
-              <p className="mt-4 text-sm">
-                ⏰ Mon–Sat: 09:00 AM - 07:00 PM
-                <br />
-                Sunday - CLOSED
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-3">Explore</h3>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:underline">About Us</a></li>
-                <li><a href="#" className="hover:underline">Services</a></li>
-                <li><a href="#" className="hover:underline">Clients</a></li>
-                <li><a href="#" className="hover:underline">Portfolio</a></li>
-                <li><a href="#" className="hover:underline">Blogs</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-3">Reach Us</h3>
-              <p className="text-sm">📍 Plot No.9,10, Manikonda, Hyderabad – 500089</p>
-              <p className="text-sm mt-1">📍 435, OU Colony, Shaikpet, Telangana – 500089</p>
-              <p className="mt-2 text-sm">📞 +91 9100945658 / +91 9697799299</p>
-              <p className="text-sm">📧 info@navni.in</p>
-            </div>
-          </div>
-        </Fade>
-      </footer>
+{/* Footer */}
+      <div className="mt-24 w-full">
+        <Footer />
+      </div>
+      
     </div>
     </div>
   );
