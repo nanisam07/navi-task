@@ -13,6 +13,7 @@ import StrategiesSection from "@/components/ui/StrategiesSection";
 import TeamSection from "../components/ui/TeamSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import Footer from "@/components/Footer";
+
 // ✅ Dynamically import StatsSection to prevent hydration errors
 import dynamic from "next/dynamic";
 const StatsSection = dynamic(() => import("@/components/StatsSection"), { ssr: false });
@@ -39,6 +40,7 @@ export default function Home() {
 
   return (
     <>
+    
       <NavbarMenu />
       <HeroSection products={projects} />
       <GoalsAndObjectives />
