@@ -7,32 +7,31 @@ const projects = [
   {
     title: "Kadapa Central",
     image: "/images/one11.png",
-    link: "https://navni.in/project/kadapa-central"
+    
   },
   {
     title: "360 LIFE TOWERS - 1",
     image: "/images/two.png",
-    link: "https://navni.in/project/green-towers"
+    
   },
   {
     title: "MY HOME 99",
     image: "/images/myhome99.png",
-    link: "https://navni.in/project/skyline"
+    
   },
   {
     title: "HETRO DRUGS LIMITED ",
     image: "/images/hetrogrug.png",
-    link: "https://navni.in/project/highrise"
   },
   {
     title: "BOMMIDI ELIE @ LB NAGAR",
     image: "/images/bommidi.png",
-    link: "https://navni.in/project/corporate"
+    
   },
   {
     title: "FARM HOUSE",
     image: "/images/farmhouse.png",
-    link: "https://navni.in/project/mall"
+    
   }
 ];
 
@@ -53,7 +52,7 @@ export default function ProjectsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           {projects.map((project, index) => (
             <motion.a
-              href={project.link}
+              
               key={index}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
