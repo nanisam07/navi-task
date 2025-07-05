@@ -70,27 +70,16 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto text-white"
         >
-<<<<<<< HEAD
-          <p className="text-sm uppercase tracking-widest mb-2 text-blue-200">
-            Explore the features
-          </p>
-          <h1 className="text-6xl md:text-8xl font-extrabold leading-tight tracking-tight opacity-30">
-            SCHEDULE
-          </h1>
-          <h2 className="text-4xl md:text-6xl font-bold -mt-8">ABOUT US</h2>
-          
-=======
+
           <p className="text-sm uppercase tracking-widest mb-2 text-black font-serif">
             Explore the features
           </p>
-          <h1 className="text-6xl md:text-8xl font-extrabold leading-tight tracking-tight opacity-30 bg-gradient-to-r from-blue-800 to-blue-100 bg-clip-text text-transparent font-serif">
+          <h1 className="text-6xl md:text-8xl font-extrabold leading-tight tracking-tight  text-blue-950 opacity-30 font-serif">
             SCHEDULE
           </h1>
-          <h2 className="text-4xl md:text-6xl font-bold mt-4 bg-gradient-to-r from-blue-800 to-blue-100 bg-clip-text text-transparent font-serif">ABOUT US</h2>
-
->>>>>>> e77d379b039209ca1209db20ca07976aa70c9fe7
+          <h2 className="text-4xl md:text-6xl font-bold text-blue-900 -mt-8 font-serif">ABOUT US</h2>
         </MotionDiv>
-      </section>
+      </section> 
 
       {/* 🧱 Main About Section */}
       <section className="max-w-4xl mx-auto p-6 mt-10 relative z-20 space-y-10">
@@ -99,15 +88,9 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-<<<<<<< HEAD
-          className="bg-black/90 backdrop-blur-md rounded-xl p-8 shadow-2xl font-serif"
-        >
-          <h2 className="text-2xl font-semibold mb-4">Who We Are</h2>
-=======
           className="bg-black/90 backdrop-blur-md rounded-xl p-8 shadow-2xl font-serif text-white"
         >
-          <h2 className="text-2xl font-semibold mb-4 ">Who We Are</h2>
->>>>>>> e77d379b039209ca1209db20ca07976aa70c9fe7
+          <h2 className="text-2xl font-semibold mb-4">Who We Are</h2>
           <p>
             Navni Post Tensioning Systems Pvt. Ltd., founded in 2019 in Hyderabad,
             specializes in designing and executing post-tensioning systems for
@@ -151,11 +134,9 @@ export default function About() {
           <h2 className="text-2xl font-semibold mb-6 text-right text-indigo-800">
             Explore Our Works
           </h2>
-<<<<<<< HEAD
-          <div className="md:flex items-center gap-10">
-=======
+
           <div className="md:flex items-center gap-10 text-white">
->>>>>>> e77d379b039209ca1209db20ca07976aa70c9fe7
+
             <Image
               src="/images/farmhouse.png"
               alt="Design Image"

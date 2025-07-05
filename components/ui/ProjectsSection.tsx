@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from 'next/link';
 
 const projects = [
   {
@@ -79,6 +80,7 @@ export default function ProjectsSection() {
         </div>
 
         <div className="mt-12 sm:mt-16 text-center">
+          <Link href="/portfolio">
           <motion.a
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
@@ -87,6 +89,7 @@ export default function ProjectsSection() {
           >
             View All Projects →
           </motion.a>
+          </Link>
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Container from '@/components/Container';
-
+import Link from 'next/link';
 export default function FeatureSection() {
   return (
     <Container>
@@ -43,9 +43,11 @@ export default function FeatureSection() {
               company which experts in Post tensioning structures Design and Execution.
               Established in 2019, we focus on providing value-added Engineering solutions.
             </p>
-            <button className="bg-purple-800 text-white text-sm sm:text-base px-6 py-2 rounded-md shadow-md hover:bg-purple-900 transition duration-300">
-              Read More
-            </button>
+            <Link href="/about">
+  <button className="bg-purple-800 text-white text-sm sm:text-base px-6 py-2 rounded-md shadow-md hover:bg-purple-900 transition duration-300">
+    Read More
+  </button>
+</Link>
           </motion.div>
 
         </div>

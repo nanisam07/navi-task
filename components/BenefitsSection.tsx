@@ -45,7 +45,7 @@ const BenefitsSection = () => {
               ${i === 1 ? 'bg-gradient-to-br from-purple-700 to-pink-600 text-white' : 'border-gray-200'}
             `}
           >
-            <h3 className={`text-lg sm:text-xl font-bold mb-4 ${i === 1 ? 'text-white' : 'text-gray-800'}`}>
+            <h3 className={`text-lg sm:text-xl font-bold mb-4 ${i === 1 ? 'text-black' : 'text-black'}`}>
               {i === 0 ? 'Benefits' : i === 1 ? 'Types of Floors' : 'Strategies'}
             </h3>
             <ul className="space-y-2 text-sm">
