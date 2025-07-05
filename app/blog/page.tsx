@@ -2,12 +2,13 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { NavbarMenu } from '@/components/ui/Navbar';
+
 import Footer from '@/components/Footer';
 import { MailIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { blogPosts } from '@/app/blog/blogData';
+import Header from '@/components/Header';
 
 export default function BlogPage() {
   const [visibleCount, setVisibleCount] = useState(6);
@@ -20,7 +21,7 @@ export default function BlogPage() {
 
   return (
     <main className="relative w-full overflow-x-hidden text-white font-sans bg-gradient-to-br from-[#003e7e] via-[#0075c7] to-[#ee2b7a]">
-      <NavbarMenu />
+      <Header />
 
       {/* 🎨 Decorative Header */}
       <div className="relative z-10 text-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white py-12 px-4 sm:py-16 sm:px-8 mb-12 font-serif">

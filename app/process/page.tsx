@@ -4,7 +4,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Footer from '@/components/Footer';
-import NavbarMenu from '@/components/ui/Navbar';
+import Header from '@/components/Header';
 
 
 // Dynamically import Lottie to avoid hydration errors
@@ -40,7 +40,7 @@ const processSteps = [
 export default function ProcessSection() {
   return (
     <>
-      <NavbarMenu />
+      <Header />
       <section className="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 py-20 px-6 sm:px-12 font-serif">
         <div className="text-center mb-16">
           <motion.h2

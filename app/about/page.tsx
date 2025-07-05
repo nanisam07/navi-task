@@ -8,7 +8,9 @@ import StrategiesSection from "@/components/ui/StrategiesSection";
 import Footer from '@/components/Footer';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import NavbarMenu from '@/components/ui/Navbar';
+import TeamSection from "@/components/ui/TeamSection";
+
+import Header from '@/components/Header';
 
 export default function About() {
   const x = useMotionValue(0);
@@ -35,7 +37,7 @@ export default function About() {
 
   return (
     <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-      <NavbarMenu />
+      <Header />
     <div
       onMouseMove={handleMouse}
       className="relative overflow-hidden min-h-screen"
@@ -75,10 +77,7 @@ export default function About() {
             SCHEDULE
           </h1>
           <h2 className="text-4xl md:text-6xl font-bold -mt-8">ABOUT US</h2>
-          <p className="mt-4 text-lg max-w-xl text-blue-100">
-            Etiam scelerisque tortor at lectus dapibus, nec fermentum diam feugiat.
-            Morbi rutrum magna et dui.
-          </p>
+          
         </MotionDiv>
       </section>
 
@@ -89,7 +88,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white/70 backdrop-blur-md rounded-xl p-8 shadow-2xl"
+          className="bg-black/90 backdrop-blur-md rounded-xl p-8 shadow-2xl font-serif"
         >
           <h2 className="text-2xl font-semibold mb-4">Who We Are</h2>
           <p>
@@ -107,8 +106,8 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="rounded-xl p-6 bg-pink-600 text-white shadow-lg"
         >
-          <h2 className="text-3xl font-bold text-center mb-6">OUR VALUES</h2>
-          <div className="grid md:grid-cols-4 gap-4 text-center text-sm">
+          <h2 className="text-3xl font-bold text-center mb-6 font-serif">OUR VALUES</h2>
+          <div className="grid md:grid-cols-4 gap-4 text-center text-sm font-serif">
             {[
               { icon: '🧱', title: 'Integrity', desc: 'Meticulous design & execution ensuring structural safety.' },
   { icon: '🏗️', title: 'Excellence', desc: 'Commitment to superior design and structural performance.' },
@@ -130,7 +129,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white/70 backdrop-blur-md rounded-xl p-8 shadow-lg"
+          className="bg-black/90 backdrop-blur-md rounded-xl p-8 shadow-lg font-serif"
         >
           <h2 className="text-2xl font-semibold mb-6 text-right text-indigo-800">
             Explore Our Works
@@ -175,6 +174,7 @@ export default function About() {
       </section>
 
       {/* 🔧 Additional Sections */}
+      <TeamSection />
       <VisionSection />
       <ServiceSection />
       <StrategiesSection />

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Footer from '@/components/Footer'; // Adjust path if needed
-import NavbarMenu from '@/components/ui/Navbar'; // Adjust path if needed
+import Header from '@/components/Header';// Adjust path if needed
 const services = [
   {
     title: 'Post-Tensioning Solutions',
@@ -82,7 +82,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <div className="bg-white text-gray-900 font-sans">
-      <NavbarMenu />
+      <Header />
     <main className="bg-gradient-to-br from-slate-950 via-gray-900 to-black text-white font-serif">
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center text-center px-6">

@@ -1,7 +1,7 @@
 "use client";
 
 import { HeroSection } from "@/components/ui/HeroSection";
-import { NavbarMenu } from "@/components/ui/Navbar";
+
 import GoalsAndObjectives from "@/components/GoalsAndObjectives";
 import VisionSection from "@/components/ui/VisionSection";
 import ProjectsSection from "@/components/ui/ProjectsSection";
@@ -13,7 +13,7 @@ import StrategiesSection from "@/components/ui/StrategiesSection";
 import TeamSection from "../components/ui/TeamSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import Footer from "@/components/Footer";
-
+import Header from '@/components/Header';
 // ✅ Dynamically import StatsSection to prevent hydration errors
 import dynamic from "next/dynamic";
 const StatsSection = dynamic(() => import("@/components/StatsSection"), { ssr: false });
@@ -40,8 +40,8 @@ export default function Home() {
 
   return (
     <>
-    
-      <NavbarMenu />
+     <Header />
+      
       <HeroSection products={projects} />
       <GoalsAndObjectives />
       <VisionSection />
