@@ -53,28 +53,28 @@ export default function GSRResidentialKollur() {
           🧱 Project Overview & Vision
         </motion.h2>
         <div className="grid md:grid-cols-3 gap-6 mb-10">
-                  <Image
-                    src="/images/projects/hyd1.png"
-                    alt="MY HOME 99 Residential View"
-                    width={600}
-                    height={400}
-                    className="rounded-lg shadow-lg"
-                  />
-                  <Image
-                    src="/images/projects/hyd2.png"
-                    alt="Interior View MY HOME"
-                    width={600}
-                    height={400}
-                    className="rounded-lg shadow-lg"
-                  />
-                  <Image
-                    src="/images/projects/hyd3.png"
-                    alt="Interior View MY HOME"
-                    width={600}
-                    height={400}
-                    className="rounded-lg shadow-lg"
-                  />
-                </div>
+          <Image
+            src="/images/projects/hyd1.png"
+            alt="MY HOME 99 Residential View"
+            width={600}
+            height={400}
+            className="rounded-lg shadow-lg"
+          />
+          <Image
+            src="/images/projects/hyd2.png"
+            alt="Interior View MY HOME"
+            width={600}
+            height={400}
+            className="rounded-lg shadow-lg"
+          />
+          <Image
+            src="/images/projects/hyd3.png"
+            alt="Interior View MY HOME"
+            width={600}
+            height={400}
+            className="rounded-lg shadow-lg"
+          />
+        </div>
         <p className="mb-4">
           Spanning 6,00,000 sq.ft of built-up area, the structure includes 2 basements, a ground floor, and 18 upper residential floors. The design emphasizes column-free spans, reduced slab thickness, and architectural flexibility for modern living.
         </p>
@@ -94,7 +94,7 @@ export default function GSRResidentialKollur() {
           transition={{ duration: 0.5 }}
           className="text-2xl font-bold text-purple-400 mb-4"
         >
-          🏗️ Navni Post Tensioning Systems’ Role
+          🏗️ Navni&rsquo;s Role
         </motion.h2>
         <p className="mb-4">
           As a leading post-tensioning specialist, <strong>Navni</strong> was responsible for the design, execution, and QA of PT systems for slabs and beams across all floors.
@@ -136,7 +136,7 @@ export default function GSRResidentialKollur() {
           Building the Future of Kollur
         </motion.h3>
         <p className="text-gray-300 max-w-2xl mx-auto">
-          Through innovative engineering and precision post-tensioning systems, Navni is shaping high-rise living in Hyderabad's dynamic Kollur district.
+          Through innovative engineering and precision post-tensioning systems, Navni is shaping high-rise living in Hyderabad&rsquo;s dynamic Kollur district.
         </p>
       </section>
         <Footer />
