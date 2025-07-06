@@ -7,7 +7,7 @@ import Header from '@/components/Header';
 export default function FarmhouseProjectPage() {
   return (
     <div className="bg-gradient-to-b from-green-950 via-black to-green-900 text-white min-h-screen font-serif">
-        <Header />
+      <Header />
       {/* 🌿 Hero Section */}
       <div className="bg-gradient-to-r from-lime-800 via-green-900 to-emerald-900 py-16 px-4 text-center">
         <motion.h1
@@ -57,10 +57,10 @@ export default function FarmhouseProjectPage() {
           transition={{ duration: 0.5 }}
           className="text-2xl font-bold text-green-300 mb-4"
         >
-          🛠️ Navni's Engineering Role
+          🛠️ Navni&rsquo;s Engineering Role
         </motion.h2>
         <p className="mb-4">
-          Navni Post Tensioning Systems Pvt. Ltd. was engaged to provide a structurally sound and long-lasting solution while maintaining the design’s lightweight and open character.
+          Navni Post Tensioning Systems Pvt. Ltd. was engaged to provide a structurally sound and long-lasting solution while maintaining the design&rsquo;s lightweight and open character.
         </p>
         <ul className="list-disc list-inside space-y-2">
           <li>Post-tensioned slab and roof systems to allow uninterrupted open-plan interiors</li>
@@ -102,7 +102,7 @@ export default function FarmhouseProjectPage() {
           Navni is proud to engineer spaces where nature meets structure. This farmhouse project is a symbol of architectural freedom, serenity, and precision post-tensioning.
         </p>
       </section>
-        <Footer /> 
+      <Footer />
     </div>
   );
 }
