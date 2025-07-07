@@ -88,9 +88,13 @@ export const NavbarMenu = () => {
             onMouseEnter={() => setIsPortfolioOpen(true)}
             onMouseLeave={() => setIsPortfolioOpen(false)}
           >
-            <p className="cursor-pointer text-black dark:text-white hover:text-fuchsia-600 transition">
-              PORTFOLIO
-            </p>
+            <Link href="/project" onClick={() => setIsPortfolioOpen(false)}>
+  <p className="cursor-pointer text-black dark:text-white hover:text-fuchsia-600 transition">
+    PORTFOLIO
+  </p>
+</Link>
+
+
             <AnimatePresence>
               {isPortfolioOpen && (
                 <motion.div
