@@ -105,7 +105,7 @@ const Footer = () => {
             <Facebook className="hover:text-white cursor-pointer" />
           </a>
           <a
-            href="https://www.facebook.com/profile.php?id=61556963534894"
+            href="https://www.instagram.com/navni_structural_systems/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"

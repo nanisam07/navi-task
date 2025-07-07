@@ -70,13 +70,6 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto text-white"
         >
-
-          <p className="text-sm uppercase tracking-widest mb-2 text-black font-serif">
-            Explore the features
-          </p>
-          <h1 className="text-6xl md:text-8xl font-extrabold leading-tight tracking-tight  text-blue-950 opacity-30 font-serif">
-            SCHEDULE
-          </h1>
           <h2 className="text-4xl md:text-6xl font-bold text-blue-900 -mt-8 font-serif">ABOUT US</h2>
         </MotionDiv>
       </section> 
