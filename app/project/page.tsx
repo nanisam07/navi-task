@@ -122,7 +122,10 @@ export default function ProjectPage() {
           {projects.map(({ name, slug, color, image }, index) => (
             <Link key={slug} href={`/project/${slug}`}>
               <div
-                ref={(el) => (cardRefs.current[index] = el)}
+                ref={(el) => {
+  cardRefs.current[index] = el;
+}}
+
                 className={`p-4 rounded-xl shadow-lg bg-gradient-to-tr ${color} transition-all duration-300 cursor-pointer text-center`}
               >
                 <div className="relative w-full h-40 mb-4 overflow-hidden rounded-md">
