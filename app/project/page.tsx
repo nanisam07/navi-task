@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
-
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Image from 'next/image';
@@ -51,31 +50,32 @@ const projects = [
 ];
 
 export default function ProjectPage() {
-  
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
-  const headerRef = useRef(null);
+  const headerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // Project Card Animation
-    cardRefs.current.forEach((el, index) => {
-      gsap.fromTo(
-        el,
-        { opacity: 0, y: 80, rotate: 5 },
-        {
-          opacity: 1,
-          y: 0,
-          rotate: 0,
-          duration: 1.2,
-          ease: 'expo.out',
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 85%',
-          },
-        }
-      );
+    // Animate each card on scroll
+    cardRefs.current.forEach((el) => {
+      if (el) {
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 80, rotate: 5 },
+          {
+            opacity: 1,
+            y: 0,
+            rotate: 0,
+            duration: 1.2,
+            ease: 'expo.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 85%',
+            },
+          }
+        );
+      }
     });
 
-    // Intro & Outro Animation for Header
+    // Animate header on load and scroll away
     if (headerRef.current) {
       gsap.fromTo(
         headerRef.current,
@@ -97,7 +97,6 @@ export default function ProjectPage() {
           start: 'top top',
           end: '+=300',
           scrub: true,
-          pin: false,
         },
       });
     }
@@ -105,45 +104,44 @@ export default function ProjectPage() {
 
   return (
     <>
-     <Header />
-    <section className="min-h-screen bg-purple-700 text-white py-16 px-4 sm:px-8 font-serif overflow-x-hidden">
-     
+      <Header />
 
-      {/* Header Section */}
-      <div ref={headerRef} className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-yellow-300">
-          All Projects
-        </h1>
-        <p className="text-white/90 text-lg">
-          Explore our diverse range of featured projects
-        </p>
-      </div>
+      <section className="min-h-screen bg-purple-700 text-white py-16 px-4 sm:px-8 font-serif overflow-x-hidden">
+        {/* Animated Header */}
+        <div ref={headerRef} className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-yellow-300">
+            All Projects
+          </h1>
+          <p className="text-white/90 text-lg">
+            Explore our diverse range of featured projects
+          </p>
+        </div>
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {projects.map(({ name, slug, color, image }, index) => (
-          <Link key={slug} href={`/project/${slug}`}>
-            <div
-              ref={(el) => { cardRefs.current[index] = el; }}
-              className={`p-4 rounded-xl shadow-lg bg-gradient-to-tr ${color} transition-all duration-300 cursor-pointer text-center`}
-            >
-              <div className="relative w-full h-40 mb-4 overflow-hidden rounded-md">
-                <Image
-                  src={image}
-                  alt={name}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-md"
-                />
+        {/* Project Grid */}
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {projects.map(({ name, slug, color, image }, index) => (
+            <Link key={slug} href={`/project/${slug}`}>
+              <div
+                ref={(el) => (cardRefs.current[index] = el)}
+                className={`p-4 rounded-xl shadow-lg bg-gradient-to-tr ${color} transition-all duration-300 cursor-pointer text-center`}
+              >
+                <div className="relative w-full h-40 mb-4 overflow-hidden rounded-md">
+                  <Image
+                    src={image}
+                    alt={name}
+                    fill
+                    className="object-cover rounded-md"
+                  />
+                </div>
+                <h2 className="text-xl font-bold text-white">{name}</h2>
+                <p className="text-white/90 text-sm mt-2">View Details</p>
               </div>
-              <h2 className="text-xl font-bold text-white">{name}</h2>
-              <p className="text-white/90 text-sm mt-2">View Details</p>
-            </div>
-          </Link>
-        ))}
-      </div>
-      
-    </section>
-    <Footer  />
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <Footer />
     </>
   );
 }
